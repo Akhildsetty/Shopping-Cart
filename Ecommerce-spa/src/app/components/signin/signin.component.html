@@ -1,0 +1,99 @@
+<section class="vh-100 gradient-custom">
+    <div class="container py-5 h-100">
+        <div class="row justify-content-center align-items-center h-100">
+            <div class="col-12 col-lg-9 col-xl-7">
+                <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+                    <div class="card-body p-4 p-md-5">
+                        <h3 style="text-align: center;" class="mb-2 pb-2 pb-md-0 mb-md-5">Registration Form</h3>
+                        <form #loginForm="ngForm" (ngSubmit)="register(loginForm.value)">
+
+                            <div class="form-outline mb-4">
+                                <input type="text" id="firstName" class="form-control " placeholder="First Name"
+                                    name="firstName" ngModel #firstName="ngModel" required />
+                                <div *ngIf="firstName.touched && !firstName.valid ">
+                                    FirstName is requried
+                                </div>
+                            </div>
+
+                            <div class="form-outline mb-4">
+                                <input type="text" id="lastName" class="form-control " placeholder="Last Name"
+                                    name="lastName" ngModel #lastName="ngModel" required />
+                                <div *ngIf="lastName.touched && lastName.invalid">
+                                    LastName is requried
+                                </div>
+                            </div>
+
+                            <div class="form-outline mb-4">
+                                <input type="email" id="email" class="form-control " placeholder="Email" name="email"
+                                    [ngModel] #email="ngModel" required />
+                                <div *ngIf="email.touched && email.invalid">
+                                    Email is requried
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3 mb-3">
+                                    <select class="select form-control" id="countrycode" aria-placeholder="code" name="countrycode" [ngModel]
+                                    #countrycode="ngModel" required >
+                                        <option value="" disabled selected>Country code</option>
+                                        <option *ngFor="let country of countryCode" value="{{country.code}}" >{{country.name}} {{country.code}}</option>
+                                    </select>
+                                    <div *ngIf="countrycode.touched && countrycode.invalid">
+                                        <div *ngIf="countrycode.errors?.['required']">countrycode is requried</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-9 mb-6">
+                                    <div class="form-outline">
+                                        <input type="tel" id="phoneNumber" class="form-control "
+                                            placeholder="PhoneNumber" name="phoneNumber" [ngModel]
+                                            #phoneNumber="ngModel" required maxlength="10" />
+                                        <div *ngIf="phoneNumber.touched && phoneNumber.invalid">
+                                            <div *ngIf="phoneNumber.errors?.['required']">PhoneNumber is requried</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+                
+                                  <div class="form-outline">
+                                    <input type="text" id="passWord" class="form-control " placeholder="PassWord"
+                                    name="passWord" ngModel #passWord="ngModel" required />
+                                    <div *ngIf="passWord.touched && !passWord.valid ">
+                                        PassWord is requried
+                                    </div>
+                                  </div>
+                
+                                </div>
+                                <div class="col-md-6 mb-4">
+                
+                                  <div class="form-outline">
+                                    <input type="text" id="ConfirmPassword" class="form-control " placeholder="Confirm Password" 
+                                    name="ConfirmPassword" ngModel #ConfirmPassword="ngModel" required />
+                                    <div *ngIf="ConfirmPassword.touched && !ConfirmPassword.valid ">
+                                        Confirm Password is requried
+                                    </div>
+                                  </div>
+                
+                                </div>
+                              </div>
+                
+                            <div class="mt-4 pt-6">
+                                
+                                <input class="btn btn-primary btn-lg" [disabled]="!loginForm.valid" type="submit"
+                                    value="Submit" />
+
+                                    <div>
+                                        <p class="mb-0" style="text-align: center;">Already member? <a [routerLink]="['/login']"
+                                            routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+                                            class="text-blue-50 fw-bold">Login</a>
+                                        </p>
+                                      </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

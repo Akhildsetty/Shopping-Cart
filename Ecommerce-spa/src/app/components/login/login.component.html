@@ -1,0 +1,106 @@
+<section class="vh-100 gradient-custom">
+  <div class="container py-5 h-100">
+    <div class="row justify-content-center align-items-center h-100">
+      <div class="col-12 col-lg-9 col-xl-7">
+        <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+          <div class="card-body p-4 p-md-5">
+            <h3 style="text-align: center;" class="mb-4 pb-2 pb-md-0 mb-md-5">Login</h3>
+            <form #loginform="ngForm" (ngSubmit)="loginform.valid && login(loginform.value)">
+              <!-- Email input -->
+              <div class="form-outline mb-4">
+                <input type="email" id="email" class="form-control" placeholder="Email" required ngModel name="email"
+                  #email="ngModel" />
+                <div *ngIf="email.touched && email.invalid">
+                  Email is requried
+                </div>
+              </div>
+
+              <!-- Password input -->
+              <div class="form-outline mb-4">
+                <input type="password" id="password" class="form-control" placeholder="Password" required ngModel
+                  name="password" #password="ngModel" />
+                <div *ngIf="password.touched && password.invalid">
+                  Password is requried
+                </div>
+              </div>
+
+              <!-- 2 column grid layout for inline styling -->
+              <div class="row mb-4">
+                <div class="col d-flex justify-content-center">
+                  <!-- Checkbox -->
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="form2Example31" unchecked />
+                    <label class="form-check-label" for="form2Example31"> Remember me </label>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <!-- Simple link -->
+                  <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal">Forgot password?</a>
+                </div>
+              </div>
+
+              <!-- Submit button -->
+              <button type="submit" value="submit" class="btn btn-primary btn-block mb-4"
+                style="text-align: center;">Login</button>
+
+              <div>
+                <p class="mb-0" style="text-align: center;">Don't have an account? <a [routerLink]="['/signin']"
+                    routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+                    class="text-blue-50 fw-bold">Register</a>
+                </p>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal (popup for forgot password)-->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Forgot Password..?</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form #forgot="ngForm">
+          <div class="modal-body">
+            <div class="form-outline mb-4">
+              <input type="email" id="email" class="form-control" placeholder="Please enter Email" required
+               [(ngModel)]="user.email"
+                name="email" #email="ngModel"  />
+              <div *ngIf="email.touched && email.invalid">
+                Email is requried
+              </div>
+            </div>
+            <div *ngIf="resetPassword==true">
+              <div class="form-outline mb-4">
+                <input type="text" id="passWord" class="form-control " placeholder="Password"
+                    name="passWord" [(ngModel)]="user.password" #passWord="ngModel" required />
+                <div *ngIf="passWord.touched && !passWord.valid ">
+                    Password is requried
+                </div>
+            </div>
+            <div class="form-outline mb-4">
+                <input type="text" id="ConfirmPassword" class="form-control "
+                    placeholder="Confirm Password" name="ConfirmPassword" [(ngModel)]="user.confirmPassword"
+                    #ConfirmPassword="ngModel" required />
+                <div *ngIf="ConfirmPassword.touched && !ConfirmPassword.valid ">
+                    Confirm Password is requried
+                </div>
+            </div>
+
+            </div>
+          </div>
+          
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" [disabled]="forgot.invalid" (click)="forgotpassword()">{{resetPassword ? "update Password" : "sumbit"}}</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

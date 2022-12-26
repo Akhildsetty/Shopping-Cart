@@ -13,15 +13,15 @@ export class AccountService {
   ) { }
     baseurl=environment.api+'Account/'
     
-    adduser(userifo:any):Observable<any>{
+    adduser(userifo:any){
      return this.http.post<any>(this.baseurl+'addUser',userifo)
     }
 
-    login(logininfo:any):Observable<any>{
+    login(logininfo:any){
       return this.http.post<any>(this.baseurl+'login',logininfo)
     }
 
-    updatepassword(userifo:any):Observable<any>{
+    updatepassword(userifo:any){
       return this.http.post<any>(this.baseurl+'UpdatePassword',userifo)
      }
 }

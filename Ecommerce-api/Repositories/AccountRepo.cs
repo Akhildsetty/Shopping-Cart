@@ -11,70 +11,63 @@ namespace Ecommerce_api.Repositories
     {
         private readonly databaseContext _dbcontext;
         public readonly DapperContext _dapperContext;
-        
+
         public AccountRepo(databaseContext dbcontext, DapperContext dapperContext)
         {
             _dbcontext = dbcontext;
             _dapperContext = dapperContext;
-            
+
         }
-        public async Task<string> Addnewuser(RegistrationDto newuser)
+        public async Task<int> Addnewuser(RegistrationDto newuser)
         {
             try
             {
-                
+
                 await _dbcontext.Registration.AddAsync(
-                    new RegisterModel{
-                    
-                    FirstName=newuser.FirstName,
-                    LastName=newuser.LastName,
-                    Email=newuser.Email,
-                    Password=newuser.Password,
-                    PhoneNumber=newuser.PhoneNumber
-                   
-                });
+                    new RegisterModel
+                    {
+
+                        FirstName = newuser.FirstName,
+                        LastName = newuser.LastName,
+                        Email = newuser.Email,
+                        Password = newuser.Password,
+                        PhoneNumber = newuser.PhoneNumber
+
+                    });
                 var adduser = await _dbcontext.SaveChangesAsync();
-                return adduser != 0 ? "true" : "false";
+                return adduser  ;
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw ex;
             }
         }
 
-        
 
-        public async Task<string> Login(LoginModel login)
+
+        public async Task<RegisterModel> Login(LoginModel login)
         {
             try
             {
-               var user = await _dbcontext.Registration.Where(x=>x.Email==login.Email).FirstOrDefaultAsync();
-                if(user != null)
-                {
-                    return user.Password==login.Password ? "true" : "false";
-                }
-                return "false";
+                var user = await _dbcontext.Registration.Where(x => x.Email == login.Email && x.Password == login.Password).FirstOrDefaultAsync();
+
+                return user;
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw ex;
             }
         }
 
-        public async Task<string> UpdatePassword(RegisterModel user,LoginModel login)
+        public async Task<int> UpdatePassword(RegisterModel user, LoginModel login)
         {
             try
             {
-                
-                if(user != null)
-                {
-                   user.Password = login.Password;
-                    var resetpassword = await _dbcontext.SaveChangesAsync();
-                    return resetpassword != 0 ? "true" : "false";
-                }
-                return "false";
+                user.Password = login.Password;
+                var resetpassword = await _dbcontext.SaveChangesAsync();
+                return resetpassword ;
             }
             catch (Exception ex)
             {

@@ -38,7 +38,11 @@ namespace Ecommerce_api.Controllers
                 if (email == null)
                     return BadRequest("enter valid input");
                 var user = await _sharedrepo.GetuserbyEmail(email);
-                return Ok(user == null ? "false" : "true");
+                if (user != null)
+                {
+                    return Ok(user);
+                }
+                return Problem("Email doesn't Exist");
             }
             catch (Exception ex)
             {
@@ -52,7 +56,7 @@ namespace Ecommerce_api.Controllers
             try
             {
                 var user = await _sharedrepo.Getallusers();
-                return Ok(user == null ? false : true);
+                return Ok(user);
             }
             catch (Exception ex)
             {

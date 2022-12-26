@@ -1,3 +1,4 @@
+import { ToastrService } from 'ngx-toastr';
 import {  HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -8,6 +9,9 @@ import { LoginComponent } from './components/login/login.component';
 import { SigninComponent } from './components/signin/signin.component';
 import { LogoutComponent } from './components/logout/logout.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { ToastrModule } from 'ngx-toastr';
+import { CONFIGURATIONS } from './constants';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -21,10 +25,19 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
-    
+    HttpClientModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+
+      timeOut: CONFIGURATIONS.TOASTER_TIMEOUT,
+
+      positionClass: CONFIGURATIONS.TOASTER_POSITION,
+
+      preventDuplicates: true
+
+    }),
   ],
-  providers: [],
+  providers: [ToastrService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -3,6 +3,10 @@ using Ecommerce_api.Models.Dto;
 using Ecommerce_api.Repositories.IRepositories;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
 
 namespace Ecommerce_api.Controllers
 {
@@ -13,11 +17,13 @@ namespace Ecommerce_api.Controllers
     {
         private readonly IAccountRepo _acctrepo;
         private readonly ISharedRepo _sharedrepo;
+        private readonly IConfiguration _config;
 
-        public AccountController(IAccountRepo acctrepo,ISharedRepo sharedRepo)
+        public AccountController(IAccountRepo acctrepo,ISharedRepo sharedRepo,IConfiguration config)
         {
             _acctrepo = acctrepo;
             _sharedrepo = sharedRepo;
+            _config = config;
         }
 
         [HttpPost]
@@ -26,20 +32,20 @@ namespace Ecommerce_api.Controllers
                     {
             try
             {
-                if (string.IsNullOrEmpty(newmodel.FirstName) && string.IsNullOrEmpty(newmodel.LastName) &&
-                    string.IsNullOrEmpty(newmodel.Email) && string.IsNullOrEmpty(newmodel.Password) && string.IsNullOrEmpty(newmodel.PhoneNumber))
-
-                    return BadRequest("PLease fill the all details");
-
+                
                 if (ModelState.IsValid)
                 {
                     var user = await _sharedrepo.GetuserbyEmail(newmodel.Email).ConfigureAwait(false);
                     if(user == null)
                     {
                         var newuser = await _acctrepo.Addnewuser(newmodel);
-                        return Ok(newuser);
+                        if (newuser != 0)
+                        {
+                            return Ok(new { StatusCode=200, message = "Registration Successfully" });
+                        }
+                        return Problem("Registration Failed");
                     }
-                    return Ok("false");
+                    return Problem("Email already Exists");
                 }
                 return BadRequest(ModelState);
             }
@@ -63,7 +69,27 @@ namespace Ecommerce_api.Controllers
                 if (ModelState.IsValid)
                 {
                     var user= await _acctrepo.Login(login);
-                    return Ok(user);
+                    if (user !=null)
+                    {
+                        var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["JwtAuthentication:Secretkey"]));
+                        var signinCredentials = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
+                        var tokeOptions = new JwtSecurityToken(
+                            issuer: _config["JwtAuthentication:issuer"],
+                            audience: _config["JwtAuthentication:audience"],
+                            claims: new List<Claim>()
+                            {
+                                new Claim("FirstName",user.FirstName),
+                                new Claim("LastName",user.LastName),
+                                new Claim("Email",user.Email),
+                                new Claim("PhoneNumber",user.PhoneNumber)
+                            },
+                            expires: DateTime.Now.AddMinutes(30),
+                            signingCredentials: signinCredentials
+                        );
+                        var tokenString = new JwtSecurityTokenHandler().WriteToken(tokeOptions);
+                        return Ok(new { StatusCode = 200, Token = tokenString,message="Login Successfully" });
+                    }
+                        return Unauthorized("Invalid Username or Password");
                 }
                 return BadRequest(ModelState);
             }
@@ -84,10 +110,19 @@ namespace Ecommerce_api.Controllers
                     var user= await _sharedrepo.GetuserbyEmail(login.Email);
                     if (user == null)
                         return BadRequest("false");
-                    var result= await _acctrepo.UpdatePassword(user,login);
-                    return Ok(result);
+                    if (user != null)
+                    {
+                        var result = await _acctrepo.UpdatePassword(user, login);
+                        if (result != 0)
+                        {
+                            return Ok(new { message = "Password Updated Successfully" });
+                        }
+                        return Problem("Password failed to Update");
+
+                    }
+                    return Unauthorized();
                 }
-                return Ok("false");
+                return BadRequest(ModelState);
             }
             catch (Exception ex)
             {

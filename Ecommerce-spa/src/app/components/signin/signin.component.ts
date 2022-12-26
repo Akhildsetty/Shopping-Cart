@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SharedService } from 'src/app/services/shared.service';
 import Swal from 'sweetalert2';
+import { NotificationService } from 'src/app/services/notification.service';
 
 @Component({
   selector: 'app-signin',
@@ -11,12 +12,14 @@ import Swal from 'sweetalert2';
 })
 export class SigninComponent implements OnInit {
   
+  Code:string='';
   countryCode:any;
   result:string='';
   constructor(
     private account :AccountService,
     private route:Router,
     private shared:SharedService,
+    private notify:NotificationService
     
   ) { }
 
@@ -46,19 +49,15 @@ export class SigninComponent implements OnInit {
       }
       this.account.adduser(formmodel).subscribe(
         data=>{
-          if(data){
-            Swal.fire("Regitration Successfull")
+          this.notify.success(data.message,"success");
             this.route.navigate(['/login'])
-          }
-          else{
-            Swal.fire("Regitration failed")
-          }
         },
-        err=>{console.log(err)}
+        err=>{console.log(err);
+          this.notify.fail(err.error.detail,"Error")}
       )
     }
     else{
-      Swal.fire("Pass Word Miss match")
+      this.notify.warn("Pass Word Miss match","waring")
     }
     
   }

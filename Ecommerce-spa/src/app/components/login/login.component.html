@@ -2,7 +2,7 @@
   <div class="container py-5 h-100">
     <div class="row justify-content-center align-items-center h-100">
       <div class="col-12 col-lg-9 col-xl-7">
-        <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+        <div class="card shadow-lg p-3 mb-5 bg-body rounded card-registration" style="border-radius: 15px;">
           <div class="card-body p-4 p-md-5">
             <img src="../../../assets/ecommerce-logo1.jpg" alt="" class="image" >
 
@@ -74,8 +74,8 @@
         <form #forgot="ngForm">
           <div class="modal-body">
             <div class="form-outline mb-4">
-              <input type="email" id="email" class="form-control" placeholder="Please enter Email" required
-                [(ngModel)]="user.email" name="email" #email="ngModel" />
+              <input type="email" id="email1" class="form-control" placeholder="Please enter Email" required
+                [(ngModel)]="user.email" name="email1" #email1="ngModel" />
               <div *ngIf="email.touched && email.invalid">
                 Email is requried
               </div>

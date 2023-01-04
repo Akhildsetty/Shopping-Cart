@@ -1,13 +1,14 @@
-import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-topnavbar',
+  templateUrl: './topnavbar.component.html',
+  styleUrls: ['./topnavbar.component.css']
 })
-export class HomeComponent implements OnInit {
-user:any;
+export class TopnavbarComponent implements OnInit {
+
+  user:any;
   constructor(private route:Router) { }
 
   ngOnInit(): void {
@@ -18,4 +19,5 @@ user:any;
     this.route.navigate(['login']);
 
   }
+
 }

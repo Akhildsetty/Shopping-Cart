@@ -1,5 +1,4 @@
 import { NotificationService } from './../../services/notification.service';
-import Swal from 'sweetalert2';
 import { SharedService } from 'src/app/services/shared.service';
 import { Router } from '@angular/router';
 import { AccountService } from './../../services/account.service';
@@ -35,8 +34,8 @@ export class LoginComponent implements OnInit {
     };
     this.account.login(formmodel).subscribe(
       (data) => {
-        localStorage.setItem('token', data.token);
-        this.notify.success(data.message, 'Success');
+        this.account.localstoragesetinfo(data);
+        
         this.route.navigate(['/home']);
       },
       (err) => {

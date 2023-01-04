@@ -87,7 +87,11 @@ namespace Ecommerce_api.Controllers
                             signingCredentials: signinCredentials
                         );
                         var tokenString = new JwtSecurityTokenHandler().WriteToken(tokeOptions);
-                        return Ok(new { StatusCode = 200, Token = tokenString,message="Login Successfully" });
+                        return Ok(new { StatusCode = 200, 
+                            Token = tokenString,
+                            message="Login Successfully",
+                            FullName=$"{user.FirstName} {user.LastName}",
+                            email=user.Email});
                     }
                         return Unauthorized("Invalid Username or Password");
                 }

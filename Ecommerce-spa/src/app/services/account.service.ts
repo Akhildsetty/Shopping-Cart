@@ -9,19 +9,26 @@ import { Observable } from 'rxjs';
 export class AccountService {
 
   constructor(
-    private http:HttpClient
+    private http: HttpClient
   ) { }
-    baseurl=environment.api+'Account/'
-    
-    adduser(userifo:any){
-     return this.http.post<any>(this.baseurl+'addUser',userifo)
-    }
+  baseurl = environment.api + 'Account/'
 
-    login(logininfo:any){
-      return this.http.post<any>(this.baseurl+'login',logininfo)
-    }
+  adduser(userifo: any) {
+    return this.http.post<any>(this.baseurl + 'addUser', userifo)
+  }
 
-    updatepassword(userifo:any){
-      return this.http.post<any>(this.baseurl+'UpdatePassword',userifo)
-     }
+  login(logininfo: any) {
+    return this.http.post<any>(this.baseurl + 'login', logininfo)
+  }
+
+  updatepassword(userifo: any) {
+    return this.http.post<any>(this.baseurl + 'UpdatePassword', userifo)
+  }
+
+localstoragesetinfo(data:any){
+  localStorage.setItem('token', data.token);
+  localStorage.setItem('Full Name',data.fullName);
+  localStorage.setItem('email',data.email)
+}
+
 }

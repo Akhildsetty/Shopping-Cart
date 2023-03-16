@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
       (data) => {
         this.account.localstoragesetinfo(data);
         
-        this.route.navigate(['/home']);
+        this.route.navigate(['/dashboard']);
       },
       (err) => {
         console.log(err)

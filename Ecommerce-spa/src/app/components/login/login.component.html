@@ -4,7 +4,7 @@
       <div class="col-12 col-lg-9 col-xl-7">
         <div class="card shadow-lg p-3 mb-5 bg-body rounded card-registration" style="border-radius: 15px;">
           <div class="card-body p-4 p-md-5">
-            <img src="../../../assets/ecommerce-logo1.jpg" alt="" class="image" >
+            <img src="../../../assets/bank-logo.jpg" alt="" class="image" >
 
             <h3 style="text-align: center;" class="mb-4 pb-2 pb-md-0 mb-md-5">Login</h3>
             <form #loginform="ngForm" (ngSubmit)="loginform.valid && login(loginform.value)">
@@ -31,8 +31,7 @@
                 <div class="col d-flex justify-content-center">
                   <!-- Checkbox -->
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="form2Example31" unchecked />
-                    <label class="form-check-label" for="form2Example31"> Remember me </label>
+                    <input class="form-check-input" type="checkbox" value="" id="form2Example31" unchecked />Remember me
                   </div>
                 </div>
 
@@ -45,7 +44,7 @@
               <!-- Submit button -->
               <div style="text-align: center;">
                 
-                <button *ngIf="loading==false" type="submit" value="submit" class="btn btn-primary btn-block mb-4">
+                <button *ngIf="loading==false" type="submit" value="submit" class="btn btn-primary btn-block mb-4" >
                   
                   Login</button><br>
                   <span *ngIf="loading==true" span class="loader"></span>

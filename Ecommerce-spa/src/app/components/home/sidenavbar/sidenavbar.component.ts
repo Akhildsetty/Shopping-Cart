@@ -11,5 +11,22 @@ export class SidenavbarComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  fields:any[]= [
+    {
+      Name: 'DashBoard',
+      url:'/dashboard',
+    },
+    {
+      Name: 'Pinchange',
+      url:'/Pinchage',
+    },
+    {
+      Name: 'Transactions',
+      url:'/transactions',
+    },
+    {
+      Name: 'MiniStatement',
+      url:'/ministatement',
+    }
+  ] ;
 }

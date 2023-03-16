@@ -1,4 +1,5 @@
 ﻿using Ecommerce_api.Repositories.IRepositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
@@ -7,6 +8,7 @@ namespace Ecommerce_api.Controllers
     [ApiController]
     [Route("api/Shared")]
     [EnableCors("SiteCorsPolicy")]
+    [Authorize]
     public class SharedController : Controller
     {
         private readonly ISharedRepo _sharedrepo;
@@ -17,6 +19,7 @@ namespace Ecommerce_api.Controllers
 
         [HttpGet]
         [Route("countryCode")]
+        [AllowAnonymous]
         public async Task<IActionResult> getallcountrycodes()
         {
             try

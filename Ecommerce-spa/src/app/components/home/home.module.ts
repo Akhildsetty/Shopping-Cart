@@ -5,7 +5,6 @@ import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home/home.component';
 import { TopnavbarComponent } from './topnavbar/topnavbar.component';
 import { SidenavbarComponent } from './sidenavbar/sidenavbar.component';
-import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -13,7 +12,6 @@ import { FooterComponent } from './footer/footer.component';
     HomeComponent,
     TopnavbarComponent,
     SidenavbarComponent,
-    FooterComponent
   ],
   imports: [
     CommonModule,

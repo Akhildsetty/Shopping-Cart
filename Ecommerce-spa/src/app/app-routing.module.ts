@@ -19,7 +19,16 @@ const routes: Routes = [
     path:"",redirectTo:"login",pathMatch:"full"
   },
   {
-    path:"home",loadChildren :()=>import("../app/components/home/home.module").then(x=>x.HomeModule)
+    path:"dashboard",loadChildren :()=>import("../app/components/home/home.module").then(x=>x.HomeModule)
+  },
+  {
+    path:"Pinchage",loadChildren :()=>import("../app/components/pinchange/pinchange.module").then(x=>x.PinchangeModule)
+  },
+  {
+    path:"ministatement",loadChildren :()=>import("../app/components/ministatementinfo/ministatementinfo.module").then(x=>x.MinistatementinfoModule)
+  },
+  {
+    path:"transactions",loadChildren :()=>import("../app/components/transactions/transactions.module").then(x=>x.TransactionsModule)
   }
 ];
 

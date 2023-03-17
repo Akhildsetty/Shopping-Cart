@@ -63,9 +63,7 @@ CREATE TABLE Transactions (
 	REFERENCES Users(AccountNumber)
 );
 
-drop table Transactions
-drop table Accounts
-drop table Users
+
 
 
 

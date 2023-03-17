@@ -11,10 +11,11 @@ import { NotificationService } from 'src/app/services/notification.service';
   styleUrls: ['./signin.component.css']
 })
 export class SigninComponent implements OnInit {
-  
+  Role:string='';
   Code:string='';
   countryCode:any;
   result:string='';
+  roles:any;
   constructor(
     private account :AccountService,
     private route:Router,
@@ -24,7 +25,8 @@ export class SigninComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getallcountrycodes()
+    this.getallcountrycodes();
+    this.getallroles();
   }
 
   getallcountrycodes(){
@@ -38,6 +40,17 @@ export class SigninComponent implements OnInit {
       }
     )
   }
+  getallroles(){
+    this.shared.getallroles().subscribe(
+      data=>{
+        this.roles=data
+        console.log(this.roles)
+      },
+      err=>{
+        console.log(err)
+      }
+    )
+  }
   register(form:any){
     if(form.passWord==form.ConfirmPassword){
       const formmodel={
@@ -45,7 +58,8 @@ export class SigninComponent implements OnInit {
         LastName:form.lastName,
         Email:form.email,
         PhoneNumber:form.countrycode+' '+form.phoneNumber,
-        Password:form.passWord
+        Password:form.passWord,
+        Role:form.role
       }
       this.account.adduser(formmodel).subscribe(
         data=>{

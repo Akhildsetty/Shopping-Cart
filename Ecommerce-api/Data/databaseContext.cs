@@ -10,7 +10,8 @@ namespace Ecommerce_api.Data
 
         }
 
-        public DbSet<RegisterModel> Registration { get; set; }
-        public DbSet<CountryCodeModel> CountryCode { get; set; }
+        public DbSet<Users> Users { get; set; }
+        public DbSet<CountryCode> CountryCode { get; set; }
+        public DbSet<Roles> Roles { get; set; }
     }
 }

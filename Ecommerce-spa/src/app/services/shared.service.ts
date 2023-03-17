@@ -18,6 +18,10 @@ export class SharedService {
   }
 
   getuserbyemail(email:any){
-    return this.http.get(this.baserurl+'getuserbyEmail/'+email)
+    return this.http.get(this.baserurl+'getuserbyEmail/'+email);
+  }
+
+  getallroles(){
+    return this.http.get(this.baserurl+'getallroles');
   }
 }

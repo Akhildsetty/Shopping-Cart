@@ -81,7 +81,8 @@ namespace Ecommerce_api.Controllers
                                 new Claim("FirstName",user.FirstName),
                                 new Claim("LastName",user.LastName),
                                 new Claim("Email",user.Email),
-                                new Claim("PhoneNumber",user.PhoneNumber)
+                                new Claim("PhoneNumber",user.PhoneNumber),
+                                new Claim("Role",user.Role)
                             },
                             expires: DateTime.Now.AddMinutes(30),
                             signingCredentials: signinCredentials
@@ -91,7 +92,8 @@ namespace Ecommerce_api.Controllers
                             Token = tokenString,
                             message="Login Successfully",
                             FullName=$"{user.FirstName} {user.LastName}",
-                            email=user.Email});
+                            email=user.Email,
+                            role=user.Role});
                     }
                         return Unauthorized("Invalid Username or Password");
                 }

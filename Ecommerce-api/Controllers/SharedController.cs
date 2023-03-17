@@ -8,7 +8,6 @@ namespace Ecommerce_api.Controllers
     [ApiController]
     [Route("api/Shared")]
     [EnableCors("SiteCorsPolicy")]
-    [Authorize]
     public class SharedController : Controller
     {
         private readonly ISharedRepo _sharedrepo;
@@ -19,7 +18,6 @@ namespace Ecommerce_api.Controllers
 
         [HttpGet]
         [Route("countryCode")]
-        [AllowAnonymous]
         public async Task<IActionResult> getallcountrycodes()
         {
             try
@@ -62,6 +60,25 @@ namespace Ecommerce_api.Controllers
                 return Ok(user);
             }
             catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        [HttpGet]
+        [Route("getallroles")]
+        public async Task<IActionResult> GetAllRoles()
+        {
+            try
+            {
+                var roles = await _sharedrepo.GetallRoles();
+                if(roles != null){
+                    return Ok(roles);
+
+                }
+                return Problem("No roles available") ;
+            }
+            catch(Exception ex)
             {
                 throw ex;
             }

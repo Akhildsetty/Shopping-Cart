@@ -29,6 +29,7 @@ localstoragesetinfo(data:any){
   localStorage.setItem('token', data.token);
   localStorage.setItem('Full Name',data.fullName);
   localStorage.setItem('email',data.email)
+  localStorage.setItem('Role',data.role)
 }
 
 }

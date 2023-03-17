@@ -22,16 +22,19 @@ namespace Ecommerce_api.Repositories
         {
             try
             {
-
-                await _dbcontext.Registration.AddAsync(
-                    new RegisterModel
+                Random generator = new Random();
+                string accountnumber = generator.Next(0, 1000000).ToString("D7");
+                
+                await _dbcontext.Users.AddAsync(
+                    new Users
                     {
-
+                        AccountNumber=accountnumber,
                         FirstName = newuser.FirstName,
                         LastName = newuser.LastName,
                         Email = newuser.Email,
                         Password = newuser.Password,
-                        PhoneNumber = newuser.PhoneNumber
+                        PhoneNumber = newuser.PhoneNumber,
+                        Role= newuser.Role,
 
                     });
                 var adduser = await _dbcontext.SaveChangesAsync();
@@ -46,11 +49,11 @@ namespace Ecommerce_api.Repositories
 
 
 
-        public async Task<RegisterModel> Login(LoginModel login)
+        public async Task<Users> Login(LoginModel login)
         {
             try
             {
-                var user = await _dbcontext.Registration.Where(x => x.Email == login.Email && x.Password == login.Password).FirstOrDefaultAsync();
+                var user = await _dbcontext.Users.Where(x => x.Email == login.Email && x.Password == login.Password).FirstOrDefaultAsync();
 
                 return user;
 
@@ -61,7 +64,7 @@ namespace Ecommerce_api.Repositories
             }
         }
 
-        public async Task<int> UpdatePassword(RegisterModel user, LoginModel login)
+        public async Task<int> UpdatePassword(Users user, LoginModel login)
         {
             try
             {

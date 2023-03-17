@@ -4,7 +4,7 @@
             <div class="col-12 col-lg-9 col-xl-7">
                 <div class="card shadow-lg p-3 mb-5 bg-body rounded card-registration" style="border-radius: 15px;">
                     <div class="card-body p-4 p-md-5">
-                        <img src="../../../assets/bank-logo.jpg" alt="" class="image" >
+                        <img src="../../../assets/bank-logo.jpg" alt="" class="image">
 
                         <h3 style="text-align: center;" class="mb-2  pb-md-0">Registration Form</h3>
                         <form #loginForm="ngForm" (ngSubmit)="register(loginForm.value)">
@@ -12,8 +12,9 @@
                                 <div class="col-md-6 ">
 
                                     <div class="form-outline">
-                                        <input type="search" id="firstName" class="form-control " placeholder="First Name"
-                                            name="firstName" ngModel #firstName="ngModel" required />
+                                        <input type="search" id="firstName" class="form-control "
+                                            placeholder="First Name" name="firstName" ngModel #firstName="ngModel"
+                                            required />
                                         <div *ngIf="firstName.touched && !firstName.valid " class="error">
                                             FirstName is requried
                                         </div>
@@ -32,19 +33,46 @@
 
                                 </div>
                             </div>
+                            <div class="row">
+                                <div class="col-md-6 ">
 
-                            <div class="form-outline mb-4">
+                                    <div class="form-outline">
+                                        <input type="email" id="email" class="form-control " placeholder="Email"
+                                            name="email" [ngModel] #email="ngModel" required />
+                                        <div *ngIf="email.touched && email.invalid" class="error">
+                                            Email is requried
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6 ">
+
+                                    <div class="form-outline mb-4">
+                                        <select class="select form-control" id="role" 
+                                        name="role" [(ngModel)]="Role" #role="ngModel" required>
+                                        <option value="" disabled>Role</option>
+                                        <option *ngFor="let role of roles" value="{{role.name}}">
+                                            {{role.name}}</option>
+                                    </select>
+                                    <div *ngIf="role.touched && role.invalid" class="error">
+                                        <div *ngIf="role.errors?.['required']">Role is requried</div>
+                                    </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- <div class="form-outline mb-4">
                                 <input type="email" id="email" class="form-control " placeholder="Email" name="email"
                                     [ngModel] #email="ngModel" required />
                                 <div *ngIf="email.touched && email.invalid" class="error">
                                     Email is requried
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="row">
                                 <div class="col-md-4 mb-3">
                                     <select class="select form-control" id="countrycode" placeholeder="Country Code"
                                         name="countrycode" [(ngModel)]="Code" #countrycode="ngModel" required>
-                                        <option value="" disabled >Country Code</option>
+                                        <option value="" disabled>Country Code</option>
                                         <option *ngFor="let country of countryCode" value="{{country.code}}">
                                             {{country.name}} {{country.code}}</option>
                                     </select>
@@ -57,7 +85,7 @@
                                         <input type="tel" id="phoneNumber" class="form-control "
                                             placeholder="Phone Number" name="phoneNumber" [ngModel]
                                             #phoneNumber="ngModel" required maxlength="10" />
-                                        <div *ngIf="phoneNumber.touched && phoneNumber.invalid"class="error">
+                                        <div *ngIf="phoneNumber.touched && phoneNumber.invalid" class="error">
                                             <div *ngIf="phoneNumber.errors?.['required']">Phone Number is requried</div>
                                         </div>
                                     </div>

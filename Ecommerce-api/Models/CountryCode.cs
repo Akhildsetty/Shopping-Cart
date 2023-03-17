@@ -1,6 +1,6 @@
 ﻿namespace Ecommerce_api.Models
 {
-    public class CountryCodeModel
+    public class CountryCode
     {
         public int Id { get; set; }
         public string Name { get; set; }

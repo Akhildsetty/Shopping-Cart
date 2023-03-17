@@ -12,7 +12,7 @@ namespace Ecommerce_api.Repositories
         {
             _dbcontext = dbcontext;
         }
-        public async Task<List<CountryCodeModel>> getallcountrycodes()
+        public async Task<List<CountryCode>> getallcountrycodes()
         {
             try
             {
@@ -30,11 +30,11 @@ namespace Ecommerce_api.Repositories
             }
         }
 
-        public async Task<List<RegisterModel>> Getallusers()
+        public async Task<List<Users>> Getallusers()
         {
             try
             {
-                var result = await _dbcontext.Registration.ToListAsync();
+                var result = await _dbcontext.Users.ToListAsync();
                 return result;
 
                 //using (var connection = _dapperContext.CreateConnection())
@@ -54,12 +54,25 @@ namespace Ecommerce_api.Repositories
 
         }
 
-        public async Task<RegisterModel> GetuserbyEmail(string email)
+        public async Task<Users> GetuserbyEmail(string email)
         {
             try
             {
 
-                var users = await _dbcontext.Registration.FirstOrDefaultAsync(x => x.Email == email);
+                var users = await _dbcontext.Users.FirstOrDefaultAsync(x => x.Email == email);
+                return users;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task<List<Roles>> GetallRoles()
+        {
+            try
+            {
+                var users = await _dbcontext.Roles.ToListAsync();
                 return users;
             }
             catch (Exception ex)

@@ -24,6 +24,8 @@ namespace Ecommerce_api.Repositories
             {
                 Random generator = new Random();
                 string accountnumber = generator.Next(0, 1000000).ToString("D7");
+
+                var role=newuser.Role==null?Role.Customer:newuser.Role;
                 
                 await _dbcontext.Users.AddAsync(
                     new Users
@@ -34,7 +36,7 @@ namespace Ecommerce_api.Repositories
                         Email = newuser.Email,
                         Password = newuser.Password,
                         PhoneNumber = newuser.PhoneNumber,
-                        Role= newuser.Role,
+                        Role= role,
 
                     });
                 var adduser = await _dbcontext.SaveChangesAsync();

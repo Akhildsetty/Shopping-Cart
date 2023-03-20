@@ -1,3 +1,4 @@
+import { AuthService } from './../../services/auth.service';
 import { NotificationService } from './../../services/notification.service';
 import { SharedService } from 'src/app/services/shared.service';
 import { Router } from '@angular/router';
@@ -21,7 +22,8 @@ export class LoginComponent implements OnInit {
     private account: AccountService,
     private route: Router,
     private shared: SharedService,
-    private notify: NotificationService
+    private notify: NotificationService,
+    private auth:AuthService
   ) {}
 
   ngOnInit(): void {}
@@ -36,7 +38,8 @@ export class LoginComponent implements OnInit {
       (data) => {
         this.account.localstoragesetinfo(data);
         
-        this.route.navigate(['/dashboard']);
+          this.route.navigate(['/home']);
+        
       },
       (err) => {
         console.log(err)

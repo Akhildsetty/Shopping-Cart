@@ -7,6 +7,7 @@ CREATE TABLE CountryCode (
     PRIMARY KEY(Id)
 );
 
+--creating a Roles table
 IF not Exists(select * from INFORMATION_SCHEMA.TABLES where TABLE_NAME='Roles')
 CREATE TABLE Roles (
     Id INT IDENTITY(1,1),
@@ -34,21 +35,7 @@ CREATE TABLE Users (
     PRIMARY KEY(AccountNumber),
 );
 
---creating a Account table
-IF not Exists(select * from INFORMATION_SCHEMA.TABLES where TABLE_NAME='Account')
-CREATE TABLE Account (
-    Id INT IDENTITY(1,1),
-    Accountnumber varchar(10) NOT NULL,
-    Branch varchar(30) NOT NULL,
-    Address varchar(100) NOT NULL,
-	State varchar(20) NOT NULL,
-	Name varchar(20) NOT NULL,
-	Balance money Not null,
-    PRIMARY KEY(Id),
-	CONSTRAINT fk_Users FOREIGN KEY (AccountNumber)  
-	REFERENCES Users(AccountNumber)
-);
-
+--creating a Transaction table
 IF not Exists(select * from INFORMATION_SCHEMA.TABLES where TABLE_NAME='Transactions')
 CREATE TABLE Transactions (
     Id INT IDENTITY(1,1),

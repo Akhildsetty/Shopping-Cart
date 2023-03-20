@@ -2,6 +2,7 @@
 using Ecommerce_api.Models.Dto;
 using Ecommerce_api.Repositories.IRepositories;
 using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
@@ -82,7 +83,8 @@ namespace Ecommerce_api.Controllers
                                 new Claim("LastName",user.LastName),
                                 new Claim("Email",user.Email),
                                 new Claim("PhoneNumber",user.PhoneNumber),
-                                new Claim("Role",user.Role)
+                                new Claim("Role",user.Role),
+                                new Claim("AccountNumber",user.AccountNumber)
                             },
                             expires: DateTime.Now.AddMinutes(30),
                             signingCredentials: signinCredentials
@@ -113,6 +115,7 @@ namespace Ecommerce_api.Controllers
             {
                 if (ModelState.IsValid)
                 {
+                    
                     var user= await _sharedrepo.GetuserbyEmail(login.Email);
                     if (user == null)
                         return BadRequest("false");

@@ -13,8 +13,8 @@ export class SidenavbarComponent implements OnInit {
   }
   fields:any[]= [
     {
-      Name: 'DashBoard',
-      url:'/dashboard',
+      Name: 'Home',
+      url:'/home',
     },
     {
       Name: 'Pinchange',

@@ -4,7 +4,7 @@
             <div class="col-12 col-lg-9 col-xl-7">
                 <div class="card shadow-lg p-3 mb-5 bg-body rounded card-registration" style="border-radius: 15px;">
                     <div class="card-body p-4 p-md-5">
-                        <img src="../../../assets/bank-logo.jpg" alt="" class="image">
+                        <img src="../../../assets/ecommerce-logo1.jpg" alt="" class="image">
 
                         <h3 style="text-align: center;" class="mb-2  pb-md-0">Registration Form</h3>
                         <form #loginForm="ngForm" (ngSubmit)="register(loginForm.value)">
@@ -33,7 +33,7 @@
 
                                 </div>
                             </div>
-                            <div class="row">
+                            <!-- <div class="row">
                                 <div class="col-md-6 ">
 
                                     <div class="form-outline">
@@ -60,14 +60,14 @@
                                     </div>
 
                                 </div>
-                            </div>
-                            <!-- <div class="form-outline mb-4">
+                            </div> -->
+                            <div class="form-outline mb-4">
                                 <input type="email" id="email" class="form-control " placeholder="Email" name="email"
                                     [ngModel] #email="ngModel" required />
                                 <div *ngIf="email.touched && email.invalid" class="error">
                                     Email is requried
                                 </div>
-                            </div> -->
+                            </div>
                             <div class="row">
                                 <div class="col-md-4 mb-3">
                                     <select class="select form-control" id="countrycode" placeholeder="Country Code"

@@ -1,3 +1,4 @@
+import { AuthGuard } from './services/auth.guard';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
@@ -19,7 +20,7 @@ const routes: Routes = [
     path:"",redirectTo:"login",pathMatch:"full"
   },
   {
-    path:"dashboard",loadChildren :()=>import("../app/components/home/home.module").then(x=>x.HomeModule)
+    path:"home",loadChildren :()=>import("../app/components/home/home.module").then(x=>x.HomeModule),canActivate:[AuthGuard]
   },
   {
     path:"Pinchage",loadChildren :()=>import("../app/components/pinchange/pinchange.module").then(x=>x.PinchangeModule)

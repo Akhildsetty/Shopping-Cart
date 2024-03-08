@@ -1,4 +1,5 @@
-﻿using Ecommerce_api.Repositories.IRepositories;
+﻿using Ecommerce_api.Repositories;
+using Ecommerce_api.Repositories.IRepositories;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
@@ -84,4 +85,5 @@ namespace Ecommerce_api.Controllers
             }
         }
     }
+    
 }

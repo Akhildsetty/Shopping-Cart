@@ -4,6 +4,7 @@ using Ecommerce_api.Models;
 using Ecommerce_api.Models.Dto;
 using Ecommerce_api.Repositories.IRepositories;
 using Microsoft.EntityFrameworkCore;
+using System.Text;
 
 namespace Ecommerce_api.Repositories
 {
@@ -11,12 +12,15 @@ namespace Ecommerce_api.Repositories
     {
         private readonly databaseContext _dbcontext;
         public readonly DapperContext _dapperContext;
+        public readonly IMailServices _mailServices;
+        public readonly IConfiguration _configuration;
 
-        public AccountRepo(databaseContext dbcontext, DapperContext dapperContext)
+        public AccountRepo(databaseContext dbcontext, DapperContext dapperContext, IMailServices mailServices,IConfiguration configuration)
         {
             _dbcontext = dbcontext;
             _dapperContext = dapperContext;
-
+            _mailServices = mailServices;
+            _configuration = configuration;
         }
         public async Task<int> Addnewuser(RegistrationDto newuser)
         {
@@ -73,6 +77,69 @@ namespace Ecommerce_api.Repositories
                 user.Password = login.Password;
                 var resetpassword = await _dbcontext.SaveChangesAsync();
                 return resetpassword ;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task<string> ValidateOtp(string email, string otp)
+        {
+            try
+            {
+
+                OtpValidation oTP_Validation = await _dbcontext.OtpValidation.Where(x=>x.Email == email&& x.Otp==otp).
+                    OrderBy(x => x.Datecreated).
+                    LastOrDefaultAsync();
+                if (oTP_Validation != null)
+                    {
+                        if(oTP_Validation.Otp == otp && !oTP_Validation.Validate)
+                        {
+
+                                oTP_Validation.Validate = true;
+                                var result = await _dbcontext.SaveChangesAsync();
+                                
+
+                                    return result != 0? "OTP Valid": "Invalid OTP";
+                        }
+                        return "Invalid OTP";
+                }
+                return "OTP doesn't exist ";
+
+            }
+            catch (Exception ex) 
+            {
+                throw ex;
+            }
+        }
+
+        public async Task<int> SendOtp(string email, Users user)
+        {
+            try
+            {
+                Random generator = new Random();
+                string Otp = generator.Next(0, 1000000).ToString("D6");
+                bool validate = false;
+                DateTime date = DateTime.Now;
+                
+                using (var connection=_dapperContext.CreateConnection())
+                {
+                    string query = $"Insert into OTPValidation(email,Otp,Validate,Datecreated) values('{email}','{Otp}','{validate}','{date}')";
+                  var result=  await connection.ExecuteAsync(query).ConfigureAwait(false);
+                    if (result != 0)
+                    {
+                        StringBuilder body = new StringBuilder();
+                        body.Append(string.Format(@" <div style='color: #002468;font-size:13px'> <p>
+                                      <b> You OTP</b><br /><br />
+                                       <b> {0} </b> please Contact our Customercare Support <b> {1}</b>                      
+                                    </p>", Otp, _configuration["EcartSupport"]));
+                        string subject = "Sending Autentication OTP";
+                     var mailresponse= await _mailServices.SendEmail(user.Email, user.FirstName + " " + user.LastName, subject,body.ToString());
+                    }
+                    return result;
+                }
+                
             }
             catch (Exception ex)
             {

@@ -1,0 +1,22 @@
+<div class="d-grid gap-2 d-md-flex justify-content-md-end m-2">
+    
+
+    <button type="button" class="btn btn-primary btn-sm">Update Profile</button>
+</div>
+<div class="dispaly-Profile">
+    
+    <div class="card" *ngIf="!updateprofile">
+        <div class="card-body">
+            <h5 class="card-title">{{this.Userinfo.firstName+" "+this.Userinfo.lastName}}</h5>
+            <label for="firstName">FirstName : </label>{{" "+this.Userinfo.firstName}}<br>
+            <label for="lastName">LastName : </label>{{" "+this.Userinfo.lastName}}<br>
+            <label for="email">Email : </label>{{" "+this.Userinfo.email}}<br>
+            <label for="phonenumber">Phone Number : </label>{{" "+this.Userinfo.phoneNumber}}<br>
+            <label for="address1">Address 1 : </label>{{" "+this.Userinfo.address1==null?'':this.Userinfo.address1}}<br>
+            <label for="addess2">Address 2 : </label>{{" "+this.Userinfo.address2==null?'':this.Userinfo.address2}}<br>
+            <label for="state">State : </label>{{" "+this.Userinfo.state==null?'':this.Userinfo.state}}<br>
+            <label for="country">Country : </label>{{" "+this.Userinfo.country==null?'':this.Userinfo.country}}<br><br>
+            <button (click)="DeleteAccount()" class="btn btn-primary btn-sm">Delete Account</button>
+        </div>
+    </div>
+</div>

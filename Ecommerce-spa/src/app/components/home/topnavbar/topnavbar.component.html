@@ -1,8 +1,13 @@
 <nav class="navbar navbar-light bg-light">
-    <div class="container">
+    <div class="container-fluid">
       <a class="navbar-brand" href="home">
-        <img src="../../../../assets/bank-logo.jpg" alt="" width="40" height="40">
+        <img src="../../../../assets/ecommerce-logo1.jpg" alt="" width="100" height="50">
       </a>
+      
+      <a class="nav-link active" aria-current="page" href="home">{{role=='Customer'?'Home':'Dashboard'}}</a>
+      <a class="nav-link" href="home/getproducts">Electronis</a>
+        <a class="nav-link" href="home/getproducts">Fashion</a>
+        <a class="nav-link" href="home/profile">Profile</a>
       <div class="btn-group">
         <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
           {{user}}

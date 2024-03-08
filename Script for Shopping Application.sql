@@ -51,7 +51,50 @@ CREATE TABLE Transactions (
 );
 
 
+--creating a Otp validation
+IF not Exists(select * from INFORMATION_SCHEMA.TABLES where TABLE_NAME='OTPValidation')
+CREATE TABLE OTPValidation (
+    Id INT IDENTITY(1,1),
+    Email varchar(30) NOT NULL,
+    Otp varchar(10) NOT NULL,
+    Validate bit not null,
+	DateCreated datetime not null,
+    PRIMARY KEY(Id),
+	
+	);
 
 
+--creating a Categerious
+IF not Exists(select * from INFORMATION_SCHEMA.TABLES where TABLE_NAME='Categerious')
+CREATE TABLE Categerious (
+    Id INT IDENTITY(1,1),
+    Name varchar(20) NOT NULL,
+    DateCreated datetime default getdate(),
+    PRIMARY KEY(Id)
+);
 
+
+--creating a Products
+IF not Exists(select * from INFORMATION_SCHEMA.TABLES where TABLE_NAME='Products')
+CREATE TABLE Products (
+    Id INT IDENTITY(1,1),
+    CategeoryId int NOT NULL,
+	Make varchar(100) not null,
+	Model varchar(100) NOT NULL,
+	Price money not null,
+    DateCreated datetime default getdate(),
+    PRIMARY KEY(Id),
+	foreign key(CategeoryId) references Categerious(Id)
+);
+
+
+--creating a Coupons
+IF not Exists(select * from INFORMATION_SCHEMA.TABLES where TABLE_NAME='Coupons')
+CREATE TABLE Coupons (
+    Id INT IDENTITY(1,1),
+    Name varchar(20) NOT NULL,
+	Validupto int not null,
+    DateCreated datetime default getdate(),
+    PRIMARY KEY(Id)
+);
 

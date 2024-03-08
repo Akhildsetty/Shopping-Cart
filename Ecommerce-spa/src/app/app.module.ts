@@ -1,6 +1,4 @@
-import { MinistatementinfoModule } from './components/ministatementinfo/ministatementinfo.module';
-import { TransactionsModule } from './components/transactions/transactions.module';
-import { PinchangeModule } from './components/pinchange/pinchange.module';
+
 import { ToastrService } from 'ngx-toastr';
 import {  HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
@@ -22,6 +20,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     LoginComponent,
     SigninComponent,
     LogoutComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -38,10 +37,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
       preventDuplicates: true
 
-    }),
-    PinchangeModule,
-    TransactionsModule,
-    MinistatementinfoModule
+    })
+
   ],
   providers: [ToastrService],
   bootstrap: [AppComponent]

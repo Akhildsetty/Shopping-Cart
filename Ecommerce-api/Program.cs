@@ -71,6 +71,7 @@ builder.Services.AddDbContext<databaseContext>(options =>
 builder.Services.AddSingleton<DapperContext>();
 builder.Services.AddScoped<IAccountRepo,AccountRepo>();
 builder.Services.AddScoped<ISharedRepo, SharedRepo>();
+builder.Services.AddScoped<IMailServices, MailServices>();
 
 var app = builder.Build();
 

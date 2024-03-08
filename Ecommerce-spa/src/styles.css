@@ -29,3 +29,8 @@
         transform: rotate(360deg);
     }
     } 
+    /* profile page css*/
+
+   .dispaly-Profile{
+    margin: 0 20px 0 20px;
+   }

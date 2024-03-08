@@ -138,5 +138,59 @@ namespace Ecommerce_api.Controllers
                 throw ex;
             }
         }
+
+        [HttpGet]
+        [Route("sendOtpbyEmail/{email}")]
+        public async Task<IActionResult> SendOTPByEmail(string email)
+        {
+            try
+            {
+                if (email == null)
+                    return BadRequest("enter valid input");
+                var user = await _sharedrepo.GetuserbyEmail(email);
+                
+                if (user != null)
+                {
+                    var result = await _acctrepo.SendOtp(email,user);
+                    if (result != 0)
+                    {
+                        return Ok(new { message = "OTP Sent Successfully" });
+                    }
+                    return Problem("OTP failed to Send");
+                }
+                return Problem("Email doesn't Exist");
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        [HttpPost]
+        [Route("ValidateOTP")]
+        public async Task<IActionResult> ValidateOTP(OtpValidationDto validationDto)
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(validationDto.otp))
+                {
+
+                    var otpadded = await _acctrepo.ValidateOtp(validationDto.email, validationDto.otp);
+
+                        if (otpadded == "OTP Valid")
+                        {
+                            return Ok(new { message = "OTP Validated Successfully" });
+                        }
+                        return Problem("OTP failed to Validate");
+                   
+                }
+                return BadRequest("OTP is requried");
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        
     }
 }

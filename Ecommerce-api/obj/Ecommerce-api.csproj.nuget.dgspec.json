@@ -1,21 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Training\\Ecommerce\\Ecommerce-api\\Ecommerce-api.csproj": {}
+    "D:\\Training\\Shopping Cart\\Shopping-Cart\\Ecommerce-api\\Ecommerce-api.csproj": {}
   },
   "projects": {
-    "D:\\Training\\Ecommerce\\Ecommerce-api\\Ecommerce-api.csproj": {
+    "D:\\Training\\Shopping Cart\\Shopping-Cart\\Ecommerce-api\\Ecommerce-api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Training\\Ecommerce\\Ecommerce-api\\Ecommerce-api.csproj",
+        "projectUniqueName": "D:\\Training\\Shopping Cart\\Shopping-Cart\\Ecommerce-api\\Ecommerce-api.csproj",
         "projectName": "Ecommerce-api",
-        "projectPath": "D:\\Training\\Ecommerce\\Ecommerce-api\\Ecommerce-api.csproj",
+        "projectPath": "D:\\Training\\Shopping Cart\\Shopping-Cart\\Ecommerce-api\\Ecommerce-api.csproj",
         "packagesPath": "C:\\Users\\adevarasetty\\.nuget\\packages\\",
-        "outputPath": "D:\\Training\\Ecommerce\\Ecommerce-api\\obj\\",
+        "outputPath": "D:\\Training\\Shopping Cart\\Shopping-Cart\\Ecommerce-api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
           "C:\\Users\\adevarasetty\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -26,8 +25,9 @@
           "net6.0"
         ],
         "sources": {
-          "https://api.nuget.org/v3/index.json": {},
-          "https://pkgs.dev.azure.com/CIMI3/_packaging/CIMINuget/nuget/v3/index.json": {}
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
@@ -39,6 +39,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -48,6 +53,14 @@
             "Dapper": {
               "target": "Package",
               "version": "[2.0.123, )"
+            },
+            "MailKit": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[6.0.9, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
@@ -77,17 +90,33 @@
               "target": "Package",
               "version": "[6.0.0, )"
             },
+            "Microsoft.IdentityModel.JsonWebTokens": {
+              "target": "Package",
+              "version": "[6.35.0, )"
+            },
+            "SendGrid": {
+              "target": "Package",
+              "version": "[9.28.1, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.3, )"
             },
             "System.Data.SqlClient": {
               "target": "Package",
-              "version": "[4.8.3, )"
+              "version": "[4.8.6, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.35.0, )"
             },
             "System.Linq": {
               "target": "Package",
               "version": "[4.3.0, )"
+            },
+            "Twilio": {
+              "target": "Package",
+              "version": "[6.0.0-rc.1, )"
             }
           },
           "imports": [
@@ -96,7 +125,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -108,7 +138,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.304\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }

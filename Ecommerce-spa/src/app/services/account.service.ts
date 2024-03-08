@@ -24,6 +24,13 @@ export class AccountService {
   updatepassword(userifo: any) {
     return this.http.post<any>(this.baseurl + 'UpdatePassword', userifo)
   }
+  sendOtpbyemail(email:any){
+    return this.http.get(this.baseurl+'sendOtpbyEmail/'+email);
+  }
+  ValidateOTP(otpcheck:any){
+    return this.http.post<any>(this.baseurl+'ValidateOTP',otpcheck);
+  }
+  
 
 localstoragesetinfo(data:any){
   localStorage.setItem('token', data.token);

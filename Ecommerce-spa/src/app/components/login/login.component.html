@@ -68,18 +68,30 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Forgot Password..?</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <form #forgot="ngForm">
           <div class="modal-body">
-            <div class="form-outline mb-4">
-              <input type="email" id="email1" class="form-control" placeholder="Please enter Email" required
-                [(ngModel)]="user.email" name="email1" #email1="ngModel" />
-              <div *ngIf="email.touched && email.invalid">
-                Email is requried
+            <div *ngIf="!otpValidation && !resetPassword">
+              <div class="form-outline mb-4">
+                <label>Please enter Email get the OTP</label>
+                <input type="email" id="email1" class="form-control" placeholder="Please enter Email" required
+                  [(ngModel)]="user.email" name="email1" #email1="ngModel" />
+                <div *ngIf="email.touched && email.invalid">
+                  Email is requried
+                </div>
               </div>
             </div>
-            <div *ngIf="resetPassword==true">
+            <div *ngIf="otpValidation && !resetPassword">
+              <div class="form-outline mb-4">
+                <label>Please enter OTP received in your Regsitered Email</label>
+                <input type="text" id="validatotp1" class="form-control" placeholder="Please enter OTP" required
+                  [(ngModel)]="validateotp" name="validatotp1" #validatotp1="ngModel" />
+                <div *ngIf="email.touched && email.invalid">
+                  OTP is requried
+                </div>
+              </div>
+            </div>
+            <div *ngIf="resetPassword && otpValidation">
               <div class="form-outline mb-4">
                 <input type="text" id="passWord" class="form-control " placeholder="Password" name="passWord"
                   [(ngModel)]="user.password" #passWord="ngModel" required />
@@ -99,9 +111,10 @@
           </div>
 
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" #closebutton>Close</button>
             <button type="button" class="btn btn-primary" [disabled]="forgot.invalid"
-              (click)="forgotpassword()">{{resetPassword ? "update Password" : "sumbit"}}</button>
+              (click)="forgotpassword()">{{ otpValidation ? resetPassword ? "Submit" : "Validate OTP" : "Send OTP"}}
+            </button>
           </div>
         </form>
       </div>

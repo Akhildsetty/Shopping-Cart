@@ -13,5 +13,6 @@ namespace Ecommerce_api.Data
         public DbSet<Users> Users { get; set; }
         public DbSet<CountryCode> CountryCode { get; set; }
         public DbSet<Roles> Roles { get; set; }
+        public DbSet<OtpValidation> OtpValidation { get; set; }
     }
 }

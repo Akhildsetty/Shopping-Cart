@@ -1,22 +1,70 @@
 <div class="d-grid gap-2 d-md-flex justify-content-md-end m-2">
-    
-
+    <button type="button" data-bs-toggle="modal" data-bs-target="#ResetPasswordModal" class="btn btn-primary btn-sm">
+        Reset Password
+    </button>
     <button type="button" class="btn btn-primary btn-sm">Update Profile</button>
 </div>
 <div class="dispaly-Profile">
-    
     <div class="card" *ngIf="!updateprofile">
         <div class="card-body">
-            <h5 class="card-title">{{this.Userinfo.firstName+" "+this.Userinfo.lastName}}</h5>
-            <label for="firstName">FirstName : </label>{{" "+this.Userinfo.firstName}}<br>
-            <label for="lastName">LastName : </label>{{" "+this.Userinfo.lastName}}<br>
-            <label for="email">Email : </label>{{" "+this.Userinfo.email}}<br>
-            <label for="phonenumber">Phone Number : </label>{{" "+this.Userinfo.phoneNumber}}<br>
-            <label for="address1">Address 1 : </label>{{" "+this.Userinfo.address1==null?'':this.Userinfo.address1}}<br>
-            <label for="addess2">Address 2 : </label>{{" "+this.Userinfo.address2==null?'':this.Userinfo.address2}}<br>
-            <label for="state">State : </label>{{" "+this.Userinfo.state==null?'':this.Userinfo.state}}<br>
-            <label for="country">Country : </label>{{" "+this.Userinfo.country==null?'':this.Userinfo.country}}<br><br>
-            <button (click)="DeleteAccount()" class="btn btn-primary btn-sm">Delete Account</button>
+            <h5 class="card-title">
+                {{ this.Userinfo.firstName + " " + this.Userinfo.lastName }}
+            </h5>
+            <label for="firstName">FirstName : </label>{{ " " + this.Userinfo.firstName }}<br />
+            <label for="lastName">LastName : </label>{{ " " + this.Userinfo.lastName
+            }}<br />
+            <label for="email">Email : </label>{{ " " + this.Userinfo.email }}<br />
+            <label for="phonenumber">Phone Number : </label>{{ " " + this.Userinfo.phoneNumber }}<br />
+            <label for="address1">Address 1 : </label>{{ " " + this.Userinfo.address1 == null ? "" :
+            this.Userinfo.address1
+            }}<br />
+            <label for="addess2">Address 2 : </label>{{ " " + this.Userinfo.address2 == null ? "" :
+            this.Userinfo.address2
+            }}<br />
+            <label for="state">State : </label>{{ " " + this.Userinfo.state == null ? "" : this.Userinfo.state }}<br />
+            <label for="country">Country : </label>{{ " " + this.Userinfo.country == null ? "" : this.Userinfo.country
+            }}<br /><br />
+            <button (click)="DeleteAccount()" class="btn btn-primary btn-sm">
+                Delete Account
+            </button>
+        </div>
+    </div>
+    <div class="modal fade" id="ResetPasswordModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Reset Password..?</h5>
+                </div>
+                <form #resetPassword="ngForm">
+                    <div class="modal-body">
+                        <div class="form-outline mb-4">
+                            <input type="text" id="passWord" class="form-control" placeholder="Password" name="passWord"
+                                [(ngModel)]="profile.password" #passWord="ngModel" required />
+                            <div *ngIf="passWord.touched && !passWord.valid">
+                                Password is requried
+                            </div>
+                        </div>
+                        <div class="form-outline mb-4">
+                            <input type="text" id="ConfirmPassword" class="form-control" placeholder="Confirm Password"
+                                name="ConfirmPassword" [(ngModel)]="profile.confirmPassword" #ConfirmPassword="ngModel"
+                                required />
+                            <div *ngIf="ConfirmPassword.touched && !ConfirmPassword.valid">
+                                Confirm Password is requried
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" #closebutton>
+                            Close
+                        </button>
+                        <button type="button" class="btn btn-primary" [disabled]="resetPassword.invalid"
+                            (click)="ResetPassword()">
+                            Save
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </div>

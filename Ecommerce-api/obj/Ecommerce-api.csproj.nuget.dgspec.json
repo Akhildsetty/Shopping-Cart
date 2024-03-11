@@ -14,7 +14,8 @@
         "outputPath": "D:\\Training\\Shopping Cart\\Shopping-Cart\\Ecommerce-api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
           "C:\\Users\\adevarasetty\\AppData\\Roaming\\NuGet\\NuGet.Config",

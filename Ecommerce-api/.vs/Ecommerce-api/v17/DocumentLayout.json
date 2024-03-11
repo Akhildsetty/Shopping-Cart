@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "D:\\Training\\Shopping Cart\\Shopping-Cart\\Ecommerce-api\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{0CEE5F27-9E86-4A41-BCE5-E235ADC7DBB5}|Ecommerce-api.csproj|d:\\training\\shopping cart\\shopping-cart\\ecommerce-api\\models\\roles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CEE5F27-9E86-4A41-BCE5-E235ADC7DBB5}|Ecommerce-api.csproj|solutionrelative:models\\roles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0CEE5F27-9E86-4A41-BCE5-E235ADC7DBB5}|Ecommerce-api.csproj|d:\\training\\shopping cart\\shopping-cart\\ecommerce-api\\repositories\\accountrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0CEE5F27-9E86-4A41-BCE5-E235ADC7DBB5}|Ecommerce-api.csproj|solutionrelative:repositories\\accountrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0CEE5F27-9E86-4A41-BCE5-E235ADC7DBB5}|Ecommerce-api.csproj|d:\\training\\shopping cart\\shopping-cart\\ecommerce-api\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0CEE5F27-9E86-4A41-BCE5-E235ADC7DBB5}|Ecommerce-api.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0CEE5F27-9E86-4A41-BCE5-E235ADC7DBB5}|Ecommerce-api.csproj|d:\\training\\shopping cart\\shopping-cart\\ecommerce-api\\models\\roles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0CEE5F27-9E86-4A41-BCE5-E235ADC7DBB5}|Ecommerce-api.csproj|solutionrelative:models\\roles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0CEE5F27-9E86-4A41-BCE5-E235ADC7DBB5}|Ecommerce-api.csproj|d:\\training\\shopping cart\\shopping-cart\\ecommerce-api\\models\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -66,17 +66,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Roles.cs",
               "DocumentMoniker": "D:\\Training\\Shopping Cart\\Shopping-Cart\\Ecommerce-api\\Models\\Roles.cs",
               "RelativeDocumentMoniker": "Models\\Roles.cs",
               "ToolTip": "D:\\Training\\Shopping Cart\\Shopping-Cart\\Ecommerce-api\\Models\\Roles.cs",
               "RelativeToolTip": "Models\\Roles.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAAwAAAAAAAAAAA",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAzwA8AAAAyAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-05T10:48:33.463Z",
               "EditorCaption": ""
@@ -91,8 +91,7 @@
               "RelativeToolTip": "Models\\Users.cs",
               "ViewState": "AQIAAAkAAAAAAAAAAAAowAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-05T09:26:57.998Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-05T09:26:57.998Z"
             },
             {
               "$type": "Document",
@@ -104,8 +103,7 @@
               "RelativeToolTip": "Models\\Transactions.cs",
               "ViewState": "AQIAAAIAAAAAAAAAAAAxwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-05T09:05:44.954Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-05T09:05:44.954Z"
             },
             {
               "$type": "Document",
@@ -158,7 +156,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "AccountController.cs",
               "DocumentMoniker": "D:\\Training\\Shopping Cart\\Shopping-Cart\\Ecommerce-api\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
@@ -171,13 +169,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "AccountRepo.cs",
               "DocumentMoniker": "D:\\Training\\Shopping Cart\\Shopping-Cart\\Ecommerce-api\\Repositories\\AccountRepo.cs",
               "RelativeDocumentMoniker": "Repositories\\AccountRepo.cs",
               "ToolTip": "D:\\Training\\Shopping Cart\\Shopping-Cart\\Ecommerce-api\\Repositories\\AccountRepo.cs",
               "RelativeToolTip": "Repositories\\AccountRepo.cs",
-              "ViewState": "AQIAAEcAAAAAAAAAAADwv0gAAAAtAAAA",
+              "ViewState": "AQIAAG8AAAAAAAAAAAAnwJAAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2023-12-27T09:16:43.247Z",
               "EditorCaption": ""
@@ -216,8 +214,7 @@
               "RelativeToolTip": "Models\\Coupons.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-04T12:54:05.525Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-04T12:54:05.525Z"
             },
             {
               "$type": "Document",
@@ -229,8 +226,7 @@
               "RelativeToolTip": "Controllers\\SharedController.cs",
               "ViewState": "AQIAAB8AAAAAAAAAAAAQwCQAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-01-04T09:38:13.884Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-01-04T09:38:13.884Z"
             },
             {
               "$type": "Document",
@@ -242,8 +238,7 @@
               "RelativeToolTip": "appsettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAA2AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-03-04T13:47:56.39Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-04T13:47:56.39Z"
             }
           ]
         }

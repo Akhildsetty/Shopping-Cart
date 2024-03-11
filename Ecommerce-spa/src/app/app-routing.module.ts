@@ -21,9 +21,6 @@ const routes: Routes = [
   },
   {
     path:"home",loadChildren :()=>import("../app/components/home/home.module").then(x=>x.HomeModule),canActivate:[AuthGuard]
-  },
-  {
-    path:"profile",loadChildren:()=>import('../app/components/profile/profile.module').then(x=>x.ProfileModule),canActivate:[AuthGuard]
   }
 ];
 

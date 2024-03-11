@@ -1,4 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { error } from 'console';
 
 import { Users } from 'src/app/Models/users.model';
 import { AccountService } from 'src/app/services/account.service';
@@ -13,40 +16,51 @@ import { SharedService } from 'src/app/services/shared.service';
 export class ProfileComponent implements OnInit {
   @ViewChild('closebutton') closebutton: any;
   user: any;
-  Userinfo!: Users;
+
   email: any;
   role: any;
-  updateprofile:boolean=false;
-  loading:boolean=false;
-  profile={
-    password:'',
-    confirmPassword:''
-  }
-    constructor(
+  updateprofile: boolean = false;
+  loading: boolean = false;
+  profile = {
+    password: '',
+    confirmPassword: ''
+  };
+
+  constructor(
     private accountservice: AccountService,
     private sharedservice: SharedService,
-    private notify:NotificationService
+    private notify: NotificationService,
+    private formbuilder: FormBuilder,
+    private route: Router
 
   ) { }
 
   ngOnInit(): void {
     this.email = localStorage.getItem('email');
     this.role = localStorage.getItem('Role');
-    this.getuserbyid();
+    this.getuserbyemail(this.email);
   }
-  getuserbyid() {
-    this.sharedservice.getuserbyemail(this.email).subscribe(
+  getuserbyemail(email: any) {
+    this.sharedservice.getuserbyemail(email).subscribe(
       (data) => {
         this.user = data;
-        this.Userinfo = this.user;
-        console.log(this.user);
       }
     )
   }
-  DeleteAccount(){
-
+  DeleteAccount() {
+    this.accountservice.deletebyemail(this.email).subscribe(
+      (data) => {
+        this.user = data;
+        this.notify.success(this.user.message, "success")
+        this.route.navigate(['']);
+      },
+      (err) => {
+        this.notify.fail(err.error.detail, "Error")
+      }
+    )
   }
-  ResetPassword(){
+
+  ResetPassword() {
     if (this.profile.password == this.profile.confirmPassword) {
       const formmodel = {
         email: this.email,
@@ -64,7 +78,12 @@ export class ProfileComponent implements OnInit {
         });
     } else {
       this.notify.warn("Password mismatch", 'warning');
-      
+
     }
   }
+
+  update() {
+    this.route.navigate(['home/profile/UpdateProfile'])
+  }
+
 }

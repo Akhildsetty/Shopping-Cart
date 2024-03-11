@@ -14,37 +14,54 @@ namespace Ecommerce_api.Repositories
         public readonly DapperContext _dapperContext;
         public readonly IMailServices _mailServices;
         public readonly IConfiguration _configuration;
+        public readonly ISharedRepo _sharedRepo;
 
-        public AccountRepo(databaseContext dbcontext, DapperContext dapperContext, IMailServices mailServices,IConfiguration configuration)
+        public AccountRepo(databaseContext dbcontext, DapperContext dapperContext, IMailServices mailServices,IConfiguration configuration, ISharedRepo sharedRepo)
         {
             _dbcontext = dbcontext;
             _dapperContext = dapperContext;
             _mailServices = mailServices;
             _configuration = configuration;
+            _sharedRepo = sharedRepo;
         }
-        public async Task<int> Addnewuser(RegistrationDto newuser)
+        public async Task<string> Addnewuser(RegistrationDto newuser)
         {
             try
             {
-                Random generator = new Random();
-                string accountnumber = generator.Next(0, 1000000).ToString("D7");
+                int adduser = 0;
+                var user = await _sharedRepo.GetuserbyEmail(newuser.Email).ConfigureAwait(false);
+                if (user == null)
+                {
+                    
+                    Random generator = new Random();
+                    string accountnumber = generator.Next(0, 1000000).ToString("D7");
 
-                var role=newuser.Role==null?Role.Customer:newuser.Role;
-                
-                await _dbcontext.Users.AddAsync(
-                    new Users
-                    {
-                        AccountNumber=accountnumber,
-                        FirstName = newuser.FirstName,
-                        LastName = newuser.LastName,
-                        Email = newuser.Email,
-                        Password = newuser.Password,
-                        PhoneNumber = newuser.PhoneNumber,
-                        Role= role,
+                    var role = newuser.Role == null ? Role.Customer : newuser.Role;
 
-                    });
-                var adduser = await _dbcontext.SaveChangesAsync();
-                return adduser  ;
+                    await _dbcontext.Users.AddAsync(
+                        new Users
+                        {
+                            AccountNumber = accountnumber,
+                            FirstName = newuser.FirstName,
+                            LastName = newuser.LastName,
+                            Email = newuser.Email,
+                            Password = newuser.Password,
+                            PhoneNumber = newuser.PhoneNumber,
+                            Role = role,
+
+                        });
+                     adduser = await _dbcontext.SaveChangesAsync();
+                    return adduser!=0? "Registration Successfull" : "Registration Failed";
+                }
+                else if(user.isRemoved)
+                {
+                    user.isRemoved = false;
+                    adduser = await _dbcontext.SaveChangesAsync();
+                    return adduser != 0 ? "Registration Successfull" : "Registration Failed";
+
+                }
+                return "Email already exists";
+                   
 
             }
             catch (Exception ex)
@@ -142,6 +159,20 @@ namespace Ecommerce_api.Repositories
                 
             }
             catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task<int> DeleteUserbyEmail(Users user)
+        {
+            try
+            {
+               user.isRemoved = true;
+                var result = await _dbcontext.SaveChangesAsync();
+                return result;
+            }
+            catch(Exception ex)
             {
                 throw ex;
             }

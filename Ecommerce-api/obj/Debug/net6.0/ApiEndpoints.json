@@ -17,6 +17,22 @@
   },
   {
     "ContainingType": "Ecommerce_api.Controllers.AccountController",
+    "Method": "Deletebyemail",
+    "RelativePath": "api/Account/deletebyemail/{email}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Ecommerce_api.Controllers.AccountController",
     "Method": "Login",
     "RelativePath": "api/Account/login",
     "HttpMethod": "POST",

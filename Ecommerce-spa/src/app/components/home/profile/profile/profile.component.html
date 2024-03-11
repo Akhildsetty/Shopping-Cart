@@ -2,34 +2,32 @@
     <button type="button" data-bs-toggle="modal" data-bs-target="#ResetPasswordModal" class="btn btn-primary btn-sm">
         Reset Password
     </button>
-    <button type="button" class="btn btn-primary btn-sm">Update Profile</button>
+    <button type="button" class="btn btn-primary btn-sm" (click)="update()">Update Profile</button>
 </div>
 <div class="dispaly-Profile">
-    <div class="card" *ngIf="!updateprofile">
-        <div class="card-body">
+    <div class="card" >
+        <div class="card-body" *ngIf="!updateprofile">
             <h5 class="card-title">
-                {{ this.Userinfo.firstName + " " + this.Userinfo.lastName }}
+                {{ this.user.firstName + " " + this.user.lastName }}
             </h5>
-            <label for="firstName">FirstName : </label>{{ " " + this.Userinfo.firstName }}<br />
-            <label for="lastName">LastName : </label>{{ " " + this.Userinfo.lastName
-            }}<br />
-            <label for="email">Email : </label>{{ " " + this.Userinfo.email }}<br />
-            <label for="phonenumber">Phone Number : </label>{{ " " + this.Userinfo.phoneNumber }}<br />
-            <label for="address1">Address 1 : </label>{{ " " + this.Userinfo.address1 == null ? "" :
-            this.Userinfo.address1
-            }}<br />
-            <label for="addess2">Address 2 : </label>{{ " " + this.Userinfo.address2 == null ? "" :
-            this.Userinfo.address2
-            }}<br />
-            <label for="state">State : </label>{{ " " + this.Userinfo.state == null ? "" : this.Userinfo.state }}<br />
-            <label for="country">Country : </label>{{ " " + this.Userinfo.country == null ? "" : this.Userinfo.country
-            }}<br /><br />
+            <label for="firstName">FirstName : </label>{{ " " + this.user.firstName }}<br />
+            <label for="lastName">LastName : </label>{{ " " + this.user.lastName}}<br />
+            <label for="email">Email : </label>{{ " " + this.user.email }}<br />
+            <label for="phonenumber">Phone Number : </label>{{ " " + this.user.phoneNumber }}<br />
+            <label for="address1">Address 1 : </label>{{ " " + this.user.address1 == null ? "" :this.user.address1}}<br />
+            <label for="addess2">Address 2 : </label>{{ " " + this.user.address2 == null ? "" :this.user.address2}}<br />
+            <label for="state">State : </label>{{ " " + this.user.state == null ? "" : this.user.state }}<br />
+            <label for="country">Country : </label>{{ " " + this.user.country == null ? "" : this.user.country}}<br /><br />
             <button (click)="DeleteAccount()" class="btn btn-primary btn-sm">
                 Delete Account
             </button>
         </div>
+       
     </div>
-    <div class="modal fade" id="ResetPasswordModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    
+    <!-- ResetPassword Modal -->
+    <div class="modal fade" id="ResetPasswordModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">

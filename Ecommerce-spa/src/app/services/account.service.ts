@@ -30,7 +30,9 @@ export class AccountService {
   ValidateOTP(otpcheck:any){
     return this.http.post<any>(this.baseurl+'ValidateOTP',otpcheck);
   }
-  
+  deletebyemail(email:any){
+    return this.http.delete(this.baseurl+'deletebyemail/'+email)
+  }
 
 localstoragesetinfo(data:any){
   localStorage.setItem('token', data.token);

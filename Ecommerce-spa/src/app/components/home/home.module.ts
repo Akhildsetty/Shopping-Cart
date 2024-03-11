@@ -5,6 +5,7 @@ import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home/home.component';
 import { TopnavbarComponent } from './topnavbar/topnavbar.component';
 import { ProductinfoComponent } from './productinfo/productinfo.component';
+import { ProfileModule } from './profile/profile.module';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { ProductinfoComponent } from './productinfo/productinfo.component';
   ],
   imports: [
     CommonModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    ProfileModule
   ]
 })
 export class HomeModule { }

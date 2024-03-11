@@ -13,7 +13,6 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { CONFIGURATIONS } from './constants';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +20,6 @@ import { ResetPasswordComponent } from './components/reset-password/reset-passwo
     LoginComponent,
     SigninComponent,
     LogoutComponent,
-    ResetPasswordComponent,
     
   ],
   imports: [

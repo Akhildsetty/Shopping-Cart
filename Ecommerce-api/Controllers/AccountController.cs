@@ -20,7 +20,7 @@ namespace Ecommerce_api.Controllers
         private readonly ISharedRepo _sharedrepo;
         private readonly IConfiguration _config;
 
-        public AccountController(IAccountRepo acctrepo,ISharedRepo sharedRepo,IConfiguration config)
+        public AccountController(IAccountRepo acctrepo, ISharedRepo sharedRepo, IConfiguration config)
         {
             _acctrepo = acctrepo;
             _sharedrepo = sharedRepo;
@@ -30,32 +30,29 @@ namespace Ecommerce_api.Controllers
         [HttpPost]
         [Route("addUser")]
         public async Task<IActionResult> Addnewuser(RegistrationDto newmodel)
-                    {
+        {
             try
             {
-                
+
                 if (ModelState.IsValid)
                 {
-                    var user = await _sharedrepo.GetuserbyEmail(newmodel.Email).ConfigureAwait(false);
-                    if(user == null)
-                    {
                         var newuser = await _acctrepo.Addnewuser(newmodel);
-                        if (newuser != 0)
+                        if (newuser == "Registration Successfull")
                         {
-                            return Ok(new { StatusCode=200, message = "Registration Successfully" });
+                            return Ok(new { StatusCode = 200, message = newuser });
                         }
-                        return Problem("Registration Failed");
-                    }
-                    return Problem("Email already Exists");
+
+                        return Problem(newuser);
                 }
-                return BadRequest(ModelState);
+                    return BadRequest(ModelState);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw ex;
             }
-            
+
         }
+    
 
         [HttpPost]
         [Route("login")]
@@ -70,7 +67,7 @@ namespace Ecommerce_api.Controllers
                 if (ModelState.IsValid)
                 {
                     var user= await _acctrepo.Login(login);
-                    if (user !=null)
+                    if (user !=null && !user.isRemoved)
                     {
                         var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["JwtAuthentication:Secretkey"]));
                         var signinCredentials = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
@@ -190,6 +187,33 @@ namespace Ecommerce_api.Controllers
             {
                 throw ex;
             }
+        }
+
+        [HttpDelete]
+        [Route("deletebyemail/{email}")]
+        
+        public async Task<IActionResult> Deletebyemail(string email)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    var user= await _sharedrepo.GetuserbyEmail(email);
+                    var result= await _acctrepo.DeleteUserbyEmail(user);
+                    if (result != 0)
+                    {
+                        return Ok(new { message = "Account Deleted Successfully" });
+                    }
+                    return BadRequest("Failed to Delete user");
+                }
+                return BadRequest(ModelState);
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            
         }
         
     }

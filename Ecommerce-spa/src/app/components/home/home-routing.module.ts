@@ -2,7 +2,6 @@ import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ProductinfoComponent } from './productinfo/productinfo.component';
-import { ProfileComponent } from '../profile/profile/profile.component';
 
 const routes: Routes = [
   
@@ -13,7 +12,7 @@ const routes: Routes = [
         path:'getproducts', component:ProductinfoComponent
       },
        {
-         path:'profile', component:ProfileComponent
+         path:'profile', loadChildren:()=>import('./profile/profile.module').then(x=>x.ProfileModule)
        },
       
     ]

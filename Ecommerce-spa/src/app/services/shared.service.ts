@@ -24,4 +24,5 @@ export class SharedService {
   getallroles(){
     return this.http.get(this.baserurl+'getallroles');
   }
+  
 }

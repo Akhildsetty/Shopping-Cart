@@ -13,6 +13,7 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { CONFIGURATIONS } from './constants';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ProfileComponent } from './components/home/profile/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     })
 
   ],
-  providers: [ToastrService],
+  providers: [ToastrService,ProfileComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -80,5 +80,41 @@ namespace Ecommerce_api.Repositories
                 throw ex;
             }
         }
+
+        public async Task<List<States>> getallstates(int countryid)
+        {
+            try
+            {
+                var result = await _dbcontext.States.Where(x=>x.Country==countryid).ToListAsync();
+                if (result.Any())
+                {
+                    var sortedcodes = result.OrderBy(x => x.StateName).ToList();
+                    return sortedcodes;
+                }
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task<List<Districts>> getalldistricts(int stateid)
+        {
+            try
+            {
+                var result = await _dbcontext.Districts.Where(x=>x.StateCode==stateid).ToListAsync();
+                if (result.Any())
+                {
+                    var sortedcodes = result.OrderBy(x => x.District).ToList();
+                    return sortedcodes;
+                }
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

@@ -12,6 +12,7 @@ namespace Ecommerce_api.Repositories.IRepositories
         Task<string> ValidateOtp(string email, string otp);
         Task<int> SendOtp( string email,Users user);
         Task<int> DeleteUserbyEmail(Users user);
+        Task<int> UpdateUser(Users Updateinfo);
 
     }
 }

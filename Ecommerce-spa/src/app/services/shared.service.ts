@@ -24,5 +24,10 @@ export class SharedService {
   getallroles(){
     return this.http.get(this.baserurl+'getallroles');
   }
-  
+  getallstates(id:any){
+    return this.http.get(this.baserurl+'StateCode/'+id);
+  }
+  getallDistricts(id:any){
+    return this.http.get(this.baserurl+'DistrictCode/'+id);
+  }
 }

@@ -1,1 +1,128 @@
-<p>update-profile works!</p>
+<div class="dispaly-Profile" style="padding-top: 15px;">
+    <div class="card">
+        <form #updateForm="ngForm" (ngSubmit)="UpdateProfile(updateForm.value)">
+            <div class="row" style="margin: 10px; padding-top: 10px;">
+                <div class="col-md-6 ">
+
+                    <div class="form-outline">
+                        <input type="text" id="firstName" class="form-control " placeholder="First Name"
+                            name="firstName" [(ngModel)]="profileInfo.firstName" #firstName="ngModel" required />
+                        <div *ngIf="firstName.touched && !firstName.valid " class="error">
+                            FirstName is requried
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-6 ">
+
+                    <div class="form-outline mb-4">
+                        <input type="text" id="lastName" class="form-control " placeholder="Last Name" name="lastName"
+                            [(ngModel)]="profileInfo.lastName" #lastName="ngModel" required />
+                        <div *ngIf="lastName.touched && lastName.invalid" class="error">
+                            LastName is requried
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="dispaly-Profile">
+                <div class="row">
+                    <div class="col-md-6 ">
+
+                        <div class="form-outline">
+                            <input type="search" id="email" class="form-control " placeholder="Email" name="email"
+                                [(ngModel)]="profileInfo.email" #email="ngModel" required />
+                            <div *ngIf="email.touched && !email.valid " class="error">
+                                Email is requried
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-6 ">
+
+                        <div class="form-outline mb-4">
+                            <input type="tel" id="phoneNumber" class="form-control " placeholder="Last Name"
+                                name="phoneNumber" [(ngModel)]="profileInfo.phoneNumber" #phoneNumber="ngModel"
+                                required />
+                            <div *ngIf="phoneNumber.touched && phoneNumber.invalid" class="error">
+                                PhoneNumber is requried
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 ">
+
+                        <div class="form-outline">
+                            <input type="text" id="address1" class="form-control " placeholder="Enter your Address"
+                                name="address1" [(ngModel)]="profileInfo.address1" #address1="ngModel" required />
+                            <div *ngIf="address1.touched && !address1.valid " class="error">
+                                Address is requried
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-6 ">
+
+                        <div class="form-outline mb-4">
+                            <input type="text" id="address2" class="form-control " placeholder="Enter you Address"
+                                name="address2" [(ngModel)]="profileInfo.address2" #address2="ngModel" required />
+                            <div *ngIf="address2.touched && address2.invalid" class="error">
+                                Address is requried
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 ">
+                        <select class="select form-control" id="countrycode" placeholeder="Country Code"
+                            name="countrycode" [(ngModel)]="profileInfo.country" (ngModelChange)="getstates($event)" #countrycode="ngModel" required>
+                            <option value="" disabled>Country </option>
+                            <option *ngFor="let country of countryCode" value="{{country.id}}">
+                                {{country.name}} </option>
+                        </select>
+                        <div *ngIf="countrycode.touched && countrycode.invalid" class="error">
+                            <div *ngIf="countrycode.errors?.['required']">Country is requried</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 ">
+                        <select class="select form-control" id="statecode" placeholeder="State Code" name="statecode"
+                            [(ngModel)]="profileInfo.state" (ngModelChange)="getDistricts($event)"  #statecode="ngModel" required>
+                            <option value="" disabled>State</option>
+                            <option *ngFor="let states of stateCode" value="{{states.id}}">
+                                {{states.stateName}} </option>
+                        </select>
+                        <div *ngIf="countrycode.touched && countrycode.invalid" class="error">
+                            <div *ngIf="countrycode.errors?.['required']">State is requried</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 ">
+                        <select class="select form-control" id="districtcode" placeholeder="Country Code"
+                            name="districtcode" [(ngModel)]="profileInfo.district" #districtcode="ngModel" required>
+                            <option value="" disabled>District</option>
+                            <option *ngFor="let districts of districtCode" value="{{districts.id}}">
+                                {{districts.district}}</option>
+                        </select>
+                        <div *ngIf="countrycode.touched && countrycode.invalid" class="error">
+                            <div *ngIf="countrycode.errors?.['required']">District is requried</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 ">
+                        <div class="form-outline mb-4">
+                            <input type="text" id="pinCode" class="form-control " placeholder="Enter you Pincode"
+                                name="pincode" [(ngModel)]="profileInfo.pinCode" #pincode="ngModel" required />
+                            <div *ngIf="pincode.touched && pincode.invalid" class="error">
+                                Address is requried
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: right;margin: 15px;">
+                <input class="btn btn-primary " [disabled]="!updateForm.valid" type="submit" value="Save Profile" />
+            </div>
+        </form>
+    </div>
+</div>

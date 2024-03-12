@@ -18,5 +18,6 @@ import { UpdateProfileComponent } from './update-profile/update-profile.componen
     ReactiveFormsModule,
     ProfileRoutingModule
   ]
+  
 })
 export class ProfileModule { }

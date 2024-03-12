@@ -36,15 +36,15 @@ namespace Ecommerce_api.Controllers
 
                 if (ModelState.IsValid)
                 {
-                        var newuser = await _acctrepo.Addnewuser(newmodel);
-                        if (newuser == "Registration Successfull")
-                        {
-                            return Ok(new { StatusCode = 200, message = newuser });
-                        }
+                    var newuser = await _acctrepo.Addnewuser(newmodel);
+                    if (newuser == "Registration Successfull")
+                    {
+                        return Ok(new { StatusCode = 200, message = newuser });
+                    }
 
-                        return Problem(newuser);
+                    return Problem(newuser);
                 }
-                    return BadRequest(ModelState);
+                return BadRequest(ModelState);
             }
             catch (Exception ex)
             {
@@ -52,7 +52,7 @@ namespace Ecommerce_api.Controllers
             }
 
         }
-    
+
 
         [HttpPost]
         [Route("login")]
@@ -66,8 +66,8 @@ namespace Ecommerce_api.Controllers
 
                 if (ModelState.IsValid)
                 {
-                    var user= await _acctrepo.Login(login);
-                    if (user !=null && !user.isRemoved)
+                    var user = await _acctrepo.Login(login);
+                    if (user != null && !user.isRemoved)
                     {
                         var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["JwtAuthentication:Secretkey"]));
                         var signinCredentials = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
@@ -87,18 +87,21 @@ namespace Ecommerce_api.Controllers
                             signingCredentials: signinCredentials
                         );
                         var tokenString = new JwtSecurityTokenHandler().WriteToken(tokeOptions);
-                        return Ok(new { StatusCode = 200, 
+                        return Ok(new
+                        {
+                            StatusCode = 200,
                             Token = tokenString,
-                            message="Login Successfully",
-                            FullName=$"{user.FirstName} {user.LastName}",
-                            email=user.Email,
-                            role=user.Role});
+                            message = "Login Successfully",
+                            FullName = $"{user.FirstName} {user.LastName}",
+                            email = user.Email,
+                            role = user.Role
+                        });
                     }
-                        return Unauthorized("Invalid Username or Password");
+                    return Unauthorized("Invalid Username or Password");
                 }
                 return BadRequest(ModelState);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw ex;
             }
@@ -112,8 +115,8 @@ namespace Ecommerce_api.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    
-                    var user= await _sharedrepo.GetuserbyEmail(login.Email);
+
+                    var user = await _sharedrepo.GetuserbyEmail(login.Email);
                     if (user == null)
                         return BadRequest("false");
                     if (user != null)
@@ -145,10 +148,10 @@ namespace Ecommerce_api.Controllers
                 if (email == null)
                     return BadRequest("enter valid input");
                 var user = await _sharedrepo.GetuserbyEmail(email);
-                
+
                 if (user != null)
                 {
-                    var result = await _acctrepo.SendOtp(email,user);
+                    var result = await _acctrepo.SendOtp(email, user);
                     if (result != 0)
                     {
                         return Ok(new { message = "OTP Sent Successfully" });
@@ -174,12 +177,12 @@ namespace Ecommerce_api.Controllers
 
                     var otpadded = await _acctrepo.ValidateOtp(validationDto.email, validationDto.otp);
 
-                        if (otpadded == "OTP Valid")
-                        {
-                            return Ok(new { message = "OTP Validated Successfully" });
-                        }
-                        return Problem("OTP failed to Validate");
-                   
+                    if (otpadded == "OTP Valid")
+                    {
+                        return Ok(new { message = "OTP Validated Successfully" });
+                    }
+                    return Problem("OTP failed to Validate");
+
                 }
                 return BadRequest("OTP is requried");
             }
@@ -191,15 +194,15 @@ namespace Ecommerce_api.Controllers
 
         [HttpDelete]
         [Route("deletebyemail/{email}")]
-        
+
         public async Task<IActionResult> Deletebyemail(string email)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    var user= await _sharedrepo.GetuserbyEmail(email);
-                    var result= await _acctrepo.DeleteUserbyEmail(user);
+                    var user = await _sharedrepo.GetuserbyEmail(email);
+                    var result = await _acctrepo.DeleteUserbyEmail(user);
                     if (result != 0)
                     {
                         return Ok(new { message = "Account Deleted Successfully" });
@@ -213,8 +216,28 @@ namespace Ecommerce_api.Controllers
             {
                 throw ex;
             }
-            
+
         }
-        
+        [HttpPut]
+        [Route("updateProfile")]
+        public async Task<IActionResult> UpdateUser([FromBody] Users user)
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                    return BadRequest(ModelState);
+                var result = await _acctrepo.UpdateUser(user);
+                if (result!=0)
+                {
+                    return Ok(new { StatusCode = 200, message = "Updated Successfully" });
+                }
+
+                return Problem("Failed to update");
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

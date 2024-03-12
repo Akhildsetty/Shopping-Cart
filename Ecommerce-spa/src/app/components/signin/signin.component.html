@@ -14,7 +14,7 @@
                                     <div class="form-outline">
                                         <input type="search" id="firstName" class="form-control "
                                             placeholder="First Name" name="firstName" ngModel #firstName="ngModel"
-                                            required />
+                                            required autocomplete="off"/>
                                         <div *ngIf="firstName.touched && !firstName.valid " class="error">
                                             FirstName is requried
                                         </div>
@@ -25,7 +25,7 @@
 
                                     <div class="form-outline mb-4">
                                         <input type="text" id="lastName" class="form-control " placeholder="Last Name"
-                                            name="lastName" ngModel #lastName="ngModel" required />
+                                            name="lastName" ngModel #lastName="ngModel" required autocomplete="off"/>
                                         <div *ngIf="lastName.touched && lastName.invalid" class="error">
                                             LastName is requried
                                         </div>
@@ -33,36 +33,9 @@
 
                                 </div>
                             </div>
-                            <!-- <div class="row">
-                                <div class="col-md-6 ">
-
-                                    <div class="form-outline">
-                                        <input type="email" id="email" class="form-control " placeholder="Email"
-                                            name="email" [ngModel] #email="ngModel" required />
-                                        <div *ngIf="email.touched && email.invalid" class="error">
-                                            Email is requried
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div class="col-md-6 ">
-
-                                    <div class="form-outline mb-4">
-                                        <select class="select form-control" id="role" 
-                                        name="role" [(ngModel)]="Role" #role="ngModel" required>
-                                        <option value="" disabled>Role</option>
-                                        <option *ngFor="let role of roles" value="{{role.name}}">
-                                            {{role.name}}</option>
-                                    </select>
-                                    <div *ngIf="role.touched && role.invalid" class="error">
-                                        <div *ngIf="role.errors?.['required']">Role is requried</div>
-                                    </div>
-                                    </div>
-
-                                </div>
-                            </div> -->
+                            
                             <div class="form-outline mb-4">
-                                <input type="email" id="email" class="form-control " placeholder="Email" name="email"
+                                <input type="email" id="email" class="form-control " autocomplete=" " placeholder="Email" name="email"
                                     [ngModel] #email="ngModel" required />
                                 <div *ngIf="email.touched && email.invalid" class="error">
                                     Email is requried
@@ -84,7 +57,7 @@
                                     <div class="form-outline">
                                         <input type="tel" id="phoneNumber" class="form-control "
                                             placeholder="Phone Number" name="phoneNumber" [ngModel]
-                                            #phoneNumber="ngModel" required maxlength="10" />
+                                            #phoneNumber="ngModel" required maxlength="10" autocomplete="off"/>
                                         <div *ngIf="phoneNumber.touched && phoneNumber.invalid" class="error">
                                             <div *ngIf="phoneNumber.errors?.['required']">Phone Number is requried</div>
                                         </div>
@@ -95,8 +68,8 @@
                                 <div class="col-md-6 mb-4">
 
                                     <div class="form-outline">
-                                        <input type="text" id="passWord" class="form-control " placeholder="Password"
-                                            name="passWord" ngModel #passWord="ngModel" required />
+                                        <input type="password" id="passWord" class="form-control " placeholder="Password"
+                                            name="passWord" ngModel #passWord="ngModel" required autocomplete="off"/>
                                         <div *ngIf="passWord.touched && !passWord.valid " class="error">
                                             Password is requried
                                         </div>
@@ -106,9 +79,9 @@
                                 <div class="col-md-6 mb-4">
 
                                     <div class="form-outline">
-                                        <input type="text" id="ConfirmPassword" class="form-control "
+                                        <input type="password" id="ConfirmPassword" class="form-control "
                                             placeholder="Confirm Password" name="ConfirmPassword" ngModel
-                                            #ConfirmPassword="ngModel" required />
+                                            #ConfirmPassword="ngModel" required autocomplete="off"/>
                                         <div *ngIf="ConfirmPassword.touched && !ConfirmPassword.valid " class="error">
                                             Confirm Password is requried
                                         </div>

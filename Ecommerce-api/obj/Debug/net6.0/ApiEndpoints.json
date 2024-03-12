@@ -81,6 +81,22 @@
   },
   {
     "ContainingType": "Ecommerce_api.Controllers.AccountController",
+    "Method": "UpdateUser",
+    "RelativePath": "api/Account/updateProfile",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "user",
+        "Type": "Ecommerce_api.Models.Users",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Ecommerce_api.Controllers.AccountController",
     "Method": "ValidateOTP",
     "RelativePath": "api/Account/ValidateOTP",
     "HttpMethod": "POST",
@@ -103,6 +119,22 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Ecommerce_api.Controllers.SharedController",
+    "Method": "getallDistricts",
+    "RelativePath": "api/Shared/DistrictCode/{stateid}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "stateid",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -136,6 +168,22 @@
       {
         "Name": "email",
         "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Ecommerce_api.Controllers.SharedController",
+    "Method": "getallstates",
+    "RelativePath": "api/Shared/StateCode/{countryid}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "countryid",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],

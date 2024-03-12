@@ -30,8 +30,10 @@ CREATE TABLE Users (
     isRemoved bit NOT NULL default 0,
 	Address1 varchar(100),
 	Address2 varchar(100),
-	State varchar(50),
-	Name varchar(50),
+	District int,
+	State int,
+	Countrty int,
+	Pincode varchar(10),
     PRIMARY KEY(AccountNumber),
 );
 
@@ -98,3 +100,20 @@ CREATE TABLE Coupons (
     PRIMARY KEY(Id)
 );
 
+IF not Exists(select * from INFORMATION_SCHEMA.TABLES where TABLE_NAME='States')
+CREATE TABLE States (
+    Id INT IDENTITY(1,1),
+	Country int not null,
+    StateName varchar(20) NOT NULL,
+    PRIMARY KEY(Id),
+	foreign key (country) references CountryCode(id)
+);
+
+IF not Exists(select * from INFORMATION_SCHEMA.TABLES where TABLE_NAME='Districts')
+CREATE TABLE Districts (
+    Id INT IDENTITY(1,1),
+	Statecode int not null,
+    District varchar(20) NOT NULL,
+    PRIMARY KEY(Id),
+	foreign key (Statecode) references states(id)
+);

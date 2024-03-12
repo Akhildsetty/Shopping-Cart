@@ -76,9 +76,19 @@ namespace Ecommerce_api.Repositories
         {
             try
             {
-                var user = await _dbcontext.Users.Where(x => x.Email == login.Email && x.Password == login.Password).FirstOrDefaultAsync();
 
+                //using (var connection =_dapperContext.CreateConnection())
+                //{
+                //    string query = $"Select * from Users where email='{login.Email}' and password='{login.Password}'";
+                //    connection.Open();
+                //    var reult= await connection.QueryFirstOrDefaultAsync<Users>(query);
+                //    Users user = new Users();
+                //    user = reult;
+                //    return user;
+                //}
+                var user = await _dbcontext.Users.Where(x => x.Email == login.Email && x.Password == login.Password).FirstOrDefaultAsync();
                 return user;
+
 
             }
             catch (Exception ex)
@@ -173,6 +183,30 @@ namespace Ecommerce_api.Repositories
                 return result;
             }
             catch(Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task<int> UpdateUser(Users Updateinfo)
+        {
+            try
+            {
+                var userresponse=await _sharedRepo.GetuserbyEmail(Updateinfo.Email);
+                userresponse.FirstName = Updateinfo.FirstName;
+                userresponse.LastName = Updateinfo.LastName;
+                userresponse.Email = Updateinfo.Email;
+                userresponse.PhoneNumber = Updateinfo.PhoneNumber;
+                userresponse.Address1 = Updateinfo.Address1;
+                userresponse.Address2 = Updateinfo.Address2;
+                userresponse.State = Updateinfo.State;
+                userresponse.Country = Updateinfo.Country;
+                userresponse.District = Updateinfo.District;
+                userresponse.Pincode = Updateinfo.Pincode;
+                var result=await _dbcontext.SaveChangesAsync();
+                return result;
+            }
+            catch (Exception ex)
             {
                 throw ex;
             }

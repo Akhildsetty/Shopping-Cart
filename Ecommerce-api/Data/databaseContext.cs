@@ -14,5 +14,9 @@ namespace Ecommerce_api.Data
         public DbSet<CountryCode> CountryCode { get; set; }
         public DbSet<Roles> Roles { get; set; }
         public DbSet<OtpValidation> OtpValidation { get; set; }
+        public DbSet<States> States { get; set; }
+        public DbSet<Districts> Districts { get; set; }
+
+
     }
 }

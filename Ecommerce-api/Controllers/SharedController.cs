@@ -84,6 +84,34 @@ namespace Ecommerce_api.Controllers
                 throw ex;
             }
         }
+        [HttpGet]
+        [Route("StateCode/{countryid}")]
+        public async Task<IActionResult> getallstates(int countryid)
+        {
+            try
+            {
+                var result = await _sharedrepo.getallstates(countryid);
+                return Ok(result == null ? "No data available" : result);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        [HttpGet]
+        [Route("DistrictCode/{stateid}")]
+        public async Task<IActionResult> getallDistricts(int stateid)
+        {
+            try
+            {
+                var result = await _sharedrepo.getalldistricts(stateid);
+                return Ok(result == null ? "No data available" : result);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
     
 }

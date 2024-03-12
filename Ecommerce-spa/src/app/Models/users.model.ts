@@ -9,8 +9,10 @@ export class Users {
     role!:string;
     address1!:string;
     address2!:string;
-    state!:string;
-    country!:string;
+    district!:any;
+    state!:any;
+    country!:any;
+    pinCode!:string;
     isRemoved!:any
 
 }

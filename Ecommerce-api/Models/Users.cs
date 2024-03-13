@@ -12,10 +12,13 @@
         public string? Role { get; set; }
         public string? Address1 { get; set; }
         public string? Address2 { get; set; }
-        public int? District { get; set; }
-        public int? State { get; set; }
-        public int? Country { get; set; }
+        public string? District { get; set; }
+        public string? State { get; set; }
+        public string? Country { get; set; }
         public string? Pincode { get; set; }
         public bool isRemoved { get; set; }
+        public DateTime? DateCreated { get; set; }
+
+        
     }
 }

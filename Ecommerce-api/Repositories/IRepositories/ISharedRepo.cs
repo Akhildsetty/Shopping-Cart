@@ -10,5 +10,6 @@ namespace Ecommerce_api.Repositories.IRepositories
         Task<List<Roles>> GetallRoles();
         Task<List<States>> getallstates( int countryid);
         Task<List<Districts>> getalldistricts(int stateid);
+        
     }
 }

@@ -1,4 +1,5 @@
-﻿using Ecommerce_api.Data;
+﻿using Dapper;
+using Ecommerce_api.Data;
 using Ecommerce_api.Models;
 using Ecommerce_api.Repositories.IRepositories;
 using Microsoft.EntityFrameworkCore;
@@ -8,9 +9,11 @@ namespace Ecommerce_api.Repositories
     public class SharedRepo : ISharedRepo
     {
         private readonly databaseContext _dbcontext;
-        public SharedRepo(databaseContext dbcontext)
+        private readonly DapperContext _dapperContext;
+        public SharedRepo(databaseContext dbcontext, DapperContext dapperContext)
         {
             _dbcontext = dbcontext;
+            _dapperContext = dapperContext;
         }
         public async Task<List<CountryCode>> getallcountrycodes()
         {
@@ -59,8 +62,9 @@ namespace Ecommerce_api.Repositories
             try
             {
 
-                var users = await _dbcontext.Users.FirstOrDefaultAsync(x => x.Email == email);
-                return users;
+                   var user = await _dbcontext.Users.FirstOrDefaultAsync(x => x.Email == email);
+                return user;
+                
             }
             catch (Exception ex)
             {

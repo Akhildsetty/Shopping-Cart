@@ -23,6 +23,9 @@ export class UpdateProfileComponent implements OnInit {
   profile: any;
   profileInfo!: Users;
   UpdateResponse: any;
+  districtname: any;
+  statename: any;
+  countryname: any;
 
 
   constructor(
@@ -79,6 +82,28 @@ export class UpdateProfileComponent implements OnInit {
     )
   }
   UpdateProfile(data: any) {
+
+    for (let countryinfo of this.countryCode) {
+      if (countryinfo.id == data.countrycode) {
+        this.countryname = countryinfo.name
+        break;
+      }
+
+    }
+    for (let stateinfo of this.stateCode) {
+      if (stateinfo.id == data.statecode) {
+        this.statename = stateinfo.stateName
+        break;
+      }
+
+    }
+    for (let districtinfo of this.districtCode) {
+      if (districtinfo.id == data.districtcode) {
+        this.districtname = districtinfo.district
+        break;
+      }
+
+    }
     const formmodal = {
       id: this.profileInfo.id,
       firstName: data.firstName,
@@ -87,9 +112,9 @@ export class UpdateProfileComponent implements OnInit {
       phoneNumber: data.phoneNumber,
       address1: data.address1,
       address2: data.address2,
-      state: data.statecode,
-      country: data.countrycode,
-      district: data.districtcode,
+      state: this.statename,
+      country: this.countryname,
+      district: this.districtname,
       pincode: data.pincode,
     }
     this.accountservice.updateprofile(formmodal).subscribe(

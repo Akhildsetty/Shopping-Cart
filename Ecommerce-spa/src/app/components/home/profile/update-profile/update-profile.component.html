@@ -94,8 +94,8 @@
                             <option *ngFor="let states of stateCode" value="{{states.id}}">
                                 {{states.stateName}} </option>
                         </select>
-                        <div *ngIf="countrycode.touched && countrycode.invalid" class="error">
-                            <div *ngIf="countrycode.errors?.['required']">State is requried</div>
+                        <div *ngIf="statecode.touched && statecode.invalid" class="error">
+                            <div *ngIf="statecode.errors?.['required']">State is requried</div>
                         </div>
                     </div>
                     <div class="col-md-3 ">
@@ -105,14 +105,14 @@
                             <option *ngFor="let districts of districtCode" value="{{districts.id}}">
                                 {{districts.district}}</option>
                         </select>
-                        <div *ngIf="countrycode.touched && countrycode.invalid" class="error">
-                            <div *ngIf="countrycode.errors?.['required']">District is requried</div>
+                        <div *ngIf="districtcode.touched && districtcode.invalid" class="error">
+                            <div *ngIf="districtcode.errors?.['required']">District is requried</div>
                         </div>
                     </div>
                     <div class="col-md-3 ">
                         <div class="form-outline mb-4">
                             <input type="text" id="pinCode" class="form-control " placeholder="Enter you Pincode"
-                                name="pincode" [(ngModel)]="profileInfo.pinCode" #pincode="ngModel" required />
+                                name="pincode" [(ngModel)]="profileInfo.pincode" #pincode="ngModel" required />
                             <div *ngIf="pincode.touched && pincode.invalid" class="error">
                                 Address is requried
                             </div>

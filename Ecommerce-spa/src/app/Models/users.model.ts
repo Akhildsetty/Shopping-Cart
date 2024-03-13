@@ -12,7 +12,7 @@ export class Users {
     district!:any;
     state!:any;
     country!:any;
-    pinCode!:string;
+    pincode!:string;
     isRemoved!:any
 
 }

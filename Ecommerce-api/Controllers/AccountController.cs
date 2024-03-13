@@ -37,7 +37,7 @@ namespace Ecommerce_api.Controllers
                 if (ModelState.IsValid)
                 {
                     var newuser = await _acctrepo.Addnewuser(newmodel);
-                    if (newuser == "Registration Successfull")
+                    if (newuser == "Registration Successfull"|| newuser == "Account Re-Activated Successfully")
                     {
                         return Ok(new { StatusCode = 200, message = newuser });
                     }
@@ -194,7 +194,6 @@ namespace Ecommerce_api.Controllers
 
         [HttpDelete]
         [Route("deletebyemail/{email}")]
-
         public async Task<IActionResult> Deletebyemail(string email)
         {
             try
@@ -227,7 +226,7 @@ namespace Ecommerce_api.Controllers
                 if (!ModelState.IsValid)
                     return BadRequest(ModelState);
                 var result = await _acctrepo.UpdateUser(user);
-                if (result!=0)
+                if (result != 0)
                 {
                     return Ok(new { StatusCode = 200, message = "Updated Successfully" });
                 }
@@ -239,5 +238,7 @@ namespace Ecommerce_api.Controllers
                 throw ex;
             }
         }
+
+        
     }
 }

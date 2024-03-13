@@ -3,32 +3,24 @@
   "WorkspaceRootPath": "D:\\Training\\Shopping Cart\\Shopping-Cart\\Ecommerce-api\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0CEE5F27-9E86-4A41-BCE5-E235ADC7DBB5}|Ecommerce-api.csproj|d:\\training\\shopping cart\\shopping-cart\\ecommerce-api\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0CEE5F27-9E86-4A41-BCE5-E235ADC7DBB5}|Ecommerce-api.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0CEE5F27-9E86-4A41-BCE5-E235ADC7DBB5}|Ecommerce-api.csproj|d:\\training\\shopping cart\\shopping-cart\\ecommerce-api\\repositories\\accountrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0CEE5F27-9E86-4A41-BCE5-E235ADC7DBB5}|Ecommerce-api.csproj|solutionrelative:repositories\\accountrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0CEE5F27-9E86-4A41-BCE5-E235ADC7DBB5}|Ecommerce-api.csproj|d:\\training\\shopping cart\\shopping-cart\\ecommerce-api\\repositories\\irepositories\\iaccountrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0CEE5F27-9E86-4A41-BCE5-E235ADC7DBB5}|Ecommerce-api.csproj|solutionrelative:repositories\\irepositories\\iaccountrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0CEE5F27-9E86-4A41-BCE5-E235ADC7DBB5}|Ecommerce-api.csproj|d:\\training\\shopping cart\\shopping-cart\\ecommerce-api\\repositories\\sharedrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0CEE5F27-9E86-4A41-BCE5-E235ADC7DBB5}|Ecommerce-api.csproj|solutionrelative:repositories\\sharedrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{0CEE5F27-9E86-4A41-BCE5-E235ADC7DBB5}|Ecommerce-api.csproj|d:\\training\\shopping cart\\shopping-cart\\ecommerce-api\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CEE5F27-9E86-4A41-BCE5-E235ADC7DBB5}|Ecommerce-api.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0CEE5F27-9E86-4A41-BCE5-E235ADC7DBB5}|Ecommerce-api.csproj|d:\\training\\shopping cart\\shopping-cart\\ecommerce-api\\models\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CEE5F27-9E86-4A41-BCE5-E235ADC7DBB5}|Ecommerce-api.csproj|solutionrelative:models\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0CEE5F27-9E86-4A41-BCE5-E235ADC7DBB5}|Ecommerce-api.csproj|d:\\training\\shopping cart\\shopping-cart\\ecommerce-api\\controllers\\sharedcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0CEE5F27-9E86-4A41-BCE5-E235ADC7DBB5}|Ecommerce-api.csproj|solutionrelative:controllers\\sharedcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0CEE5F27-9E86-4A41-BCE5-E235ADC7DBB5}|Ecommerce-api.csproj|d:\\training\\shopping cart\\shopping-cart\\ecommerce-api\\repositories\\irepositories\\isharedrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0CEE5F27-9E86-4A41-BCE5-E235ADC7DBB5}|Ecommerce-api.csproj|solutionrelative:repositories\\irepositories\\isharedrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0CEE5F27-9E86-4A41-BCE5-E235ADC7DBB5}|Ecommerce-api.csproj|d:\\training\\shopping cart\\shopping-cart\\ecommerce-api\\data\\databasecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0CEE5F27-9E86-4A41-BCE5-E235ADC7DBB5}|Ecommerce-api.csproj|solutionrelative:data\\databasecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0CEE5F27-9E86-4A41-BCE5-E235ADC7DBB5}|Ecommerce-api.csproj|d:\\training\\shopping cart\\shopping-cart\\ecommerce-api\\models\\districts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -39,8 +31,16 @@
       "RelativeMoniker": "D:0:0:{0CEE5F27-9E86-4A41-BCE5-E235ADC7DBB5}|Ecommerce-api.csproj|solutionrelative:models\\states.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0CEE5F27-9E86-4A41-BCE5-E235ADC7DBB5}|Ecommerce-api.csproj|d:\\training\\shopping cart\\shopping-cart\\ecommerce-api\\models\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0CEE5F27-9E86-4A41-BCE5-E235ADC7DBB5}|Ecommerce-api.csproj|solutionrelative:models\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0CEE5F27-9E86-4A41-BCE5-E235ADC7DBB5}|Ecommerce-api.csproj|d:\\training\\shopping cart\\shopping-cart\\ecommerce-api\\data\\databasecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CEE5F27-9E86-4A41-BCE5-E235ADC7DBB5}|Ecommerce-api.csproj|solutionrelative:data\\databasecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0CEE5F27-9E86-4A41-BCE5-E235ADC7DBB5}|Ecommerce-api.csproj|d:\\training\\shopping cart\\shopping-cart\\ecommerce-api\\repositories\\irepositories\\isharedrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CEE5F27-9E86-4A41-BCE5-E235ADC7DBB5}|Ecommerce-api.csproj|solutionrelative:repositories\\irepositories\\isharedrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0CEE5F27-9E86-4A41-BCE5-E235ADC7DBB5}|Ecommerce-api.csproj|d:\\training\\shopping cart\\shopping-cart\\ecommerce-api\\repositories\\irepositories\\iaccountrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CEE5F27-9E86-4A41-BCE5-E235ADC7DBB5}|Ecommerce-api.csproj|solutionrelative:repositories\\irepositories\\iaccountrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0CEE5F27-9E86-4A41-BCE5-E235ADC7DBB5}|Ecommerce-api.csproj|d:\\training\\shopping cart\\shopping-cart\\ecommerce-api\\models\\dto\\registrationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -94,44 +94,136 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "SharedRepo.cs",
               "DocumentMoniker": "D:\\Training\\Shopping Cart\\Shopping-Cart\\Ecommerce-api\\Repositories\\SharedRepo.cs",
               "RelativeDocumentMoniker": "Repositories\\SharedRepo.cs",
               "ToolTip": "D:\\Training\\Shopping Cart\\Shopping-Cart\\Ecommerce-api\\Repositories\\SharedRepo.cs",
               "RelativeToolTip": "Repositories\\SharedRepo.cs",
-              "ViewState": "AQIAAGMAAAAAAAAAAAAcwFcAAABHAAAA",
+              "ViewState": "AQIAADkAAAAAAAAAAAAowEgAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-12T12:16:22.275Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "IMailServices.cs",
-              "DocumentMoniker": "D:\\Training\\Shopping Cart\\Shopping-Cart\\Ecommerce-api\\Repositories\\IRepositories\\IMailServices.cs",
-              "RelativeDocumentMoniker": "Repositories\\IRepositories\\IMailServices.cs",
-              "ToolTip": "D:\\Training\\Shopping Cart\\Shopping-Cart\\Ecommerce-api\\Repositories\\IRepositories\\IMailServices.cs",
-              "RelativeToolTip": "Repositories\\IRepositories\\IMailServices.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
+              "DocumentIndex": 4,
+              "Title": "SharedController.cs",
+              "DocumentMoniker": "D:\\Training\\Shopping Cart\\Shopping-Cart\\Ecommerce-api\\Controllers\\SharedController.cs",
+              "RelativeDocumentMoniker": "Controllers\\SharedController.cs",
+              "ToolTip": "D:\\Training\\Shopping Cart\\Shopping-Cart\\Ecommerce-api\\Controllers\\SharedController.cs",
+              "RelativeToolTip": "Controllers\\SharedController.cs",
+              "ViewState": "AQIAACEAAAAAAAAAAAArwCQAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-12-27T10:00:17.842Z"
+              "WhenOpened": "2024-01-04T09:38:13.884Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Training\\Shopping Cart\\Shopping-Cart\\Ecommerce-api\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "D:\\Training\\Shopping Cart\\Shopping-Cart\\Ecommerce-api\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAC0AAAAAAAAAAIBZwCsAAAAaAAAA",
+              "DocumentIndex": 0,
+              "Title": "AccountRepo.cs",
+              "DocumentMoniker": "D:\\Training\\Shopping Cart\\Shopping-Cart\\Ecommerce-api\\Repositories\\AccountRepo.cs",
+              "RelativeDocumentMoniker": "Repositories\\AccountRepo.cs",
+              "ToolTip": "D:\\Training\\Shopping Cart\\Shopping-Cart\\Ecommerce-api\\Repositories\\AccountRepo.cs",
+              "RelativeToolTip": "Repositories\\AccountRepo.cs",
+              "ViewState": "AQIAAGEAAAAAAAAAAAArwGkAAAAyAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-12-28T06:27:20.319Z"
+              "WhenOpened": "2023-12-27T09:16:43.247Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "D:\\Training\\Shopping Cart\\Shopping-Cart\\Ecommerce-api\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
+              "ToolTip": "D:\\Training\\Shopping Cart\\Shopping-Cart\\Ecommerce-api\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Controllers\\AccountController.cs",
+              "ViewState": "AQIAAGoAAAAAAAAAAAAAwHsAAABDAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-12-27T09:16:42.5Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ISharedRepo.cs",
+              "DocumentMoniker": "D:\\Training\\Shopping Cart\\Shopping-Cart\\Ecommerce-api\\Repositories\\IRepositories\\ISharedRepo.cs",
+              "RelativeDocumentMoniker": "Repositories\\IRepositories\\ISharedRepo.cs",
+              "ToolTip": "D:\\Training\\Shopping Cart\\Shopping-Cart\\Ecommerce-api\\Repositories\\IRepositories\\ISharedRepo.cs",
+              "RelativeToolTip": "Repositories\\IRepositories\\ISharedRepo.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAAAAkAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-12T12:12:20.879Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Users.cs",
+              "DocumentMoniker": "D:\\Training\\Shopping Cart\\Shopping-Cart\\Ecommerce-api\\Models\\Users.cs",
+              "RelativeDocumentMoniker": "Models\\Users.cs",
+              "ToolTip": "D:\\Training\\Shopping Cart\\Shopping-Cart\\Ecommerce-api\\Models\\Users.cs",
+              "RelativeToolTip": "Models\\Users.cs",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAzwAoAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-05T09:26:57.998Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "databaseContext.cs",
+              "DocumentMoniker": "D:\\Training\\Shopping Cart\\Shopping-Cart\\Ecommerce-api\\Data\\databaseContext.cs",
+              "RelativeDocumentMoniker": "Data\\databaseContext.cs",
+              "ToolTip": "D:\\Training\\Shopping Cart\\Shopping-Cart\\Ecommerce-api\\Data\\databaseContext.cs",
+              "RelativeToolTip": "Data\\databaseContext.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAwAwAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-12T12:17:29.43Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "States.cs",
+              "DocumentMoniker": "D:\\Training\\Shopping Cart\\Shopping-Cart\\Ecommerce-api\\Models\\States.cs",
+              "RelativeDocumentMoniker": "Models\\States.cs",
+              "ToolTip": "D:\\Training\\Shopping Cart\\Shopping-Cart\\Ecommerce-api\\Models\\States.cs",
+              "RelativeToolTip": "Models\\States.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-12T12:13:22.794Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Districts.cs",
+              "DocumentMoniker": "D:\\Training\\Shopping Cart\\Shopping-Cart\\Ecommerce-api\\Models\\Districts.cs",
+              "RelativeDocumentMoniker": "Models\\Districts.cs",
+              "ToolTip": "D:\\Training\\Shopping Cart\\Shopping-Cart\\Ecommerce-api\\Models\\Districts.cs",
+              "RelativeToolTip": "Models\\Districts.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-12T12:14:56.531Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "IAccountRepo.cs",
+              "DocumentMoniker": "D:\\Training\\Shopping Cart\\Shopping-Cart\\Ecommerce-api\\Repositories\\IRepositories\\IAccountRepo.cs",
+              "RelativeDocumentMoniker": "Repositories\\IRepositories\\IAccountRepo.cs",
+              "ToolTip": "D:\\Training\\Shopping Cart\\Shopping-Cart\\Ecommerce-api\\Repositories\\IRepositories\\IAccountRepo.cs",
+              "RelativeToolTip": "Repositories\\IRepositories\\IAccountRepo.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAxwA0AAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-11T12:18:03.392Z"
             },
             {
               "$type": "Document",
@@ -147,107 +239,27 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "SharedController.cs",
-              "DocumentMoniker": "D:\\Training\\Shopping Cart\\Shopping-Cart\\Ecommerce-api\\Controllers\\SharedController.cs",
-              "RelativeDocumentMoniker": "Controllers\\SharedController.cs",
-              "ToolTip": "D:\\Training\\Shopping Cart\\Shopping-Cart\\Ecommerce-api\\Controllers\\SharedController.cs",
-              "RelativeToolTip": "Controllers\\SharedController.cs",
-              "ViewState": "AQIAAFIAAAAAAAAAAAAowFwAAAA1AAAA",
+              "DocumentIndex": 20,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Training\\Shopping Cart\\Shopping-Cart\\Ecommerce-api\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\Training\\Shopping Cart\\Shopping-Cart\\Ecommerce-api\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAC0AAAAAAAAAAIBZwCsAAAAaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-01-04T09:38:13.884Z",
-              "EditorCaption": ""
+              "WhenOpened": "2023-12-28T06:27:20.319Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "IAccountRepo.cs",
-              "DocumentMoniker": "D:\\Training\\Shopping Cart\\Shopping-Cart\\Ecommerce-api\\Repositories\\IRepositories\\IAccountRepo.cs",
-              "RelativeDocumentMoniker": "Repositories\\IRepositories\\IAccountRepo.cs",
-              "ToolTip": "D:\\Training\\Shopping Cart\\Shopping-Cart\\Ecommerce-api\\Repositories\\IRepositories\\IAccountRepo.cs",
-              "RelativeToolTip": "Repositories\\IRepositories\\IAccountRepo.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAxwA0AAAAwAAAA",
+              "DocumentIndex": 19,
+              "Title": "IMailServices.cs",
+              "DocumentMoniker": "D:\\Training\\Shopping Cart\\Shopping-Cart\\Ecommerce-api\\Repositories\\IRepositories\\IMailServices.cs",
+              "RelativeDocumentMoniker": "Repositories\\IRepositories\\IMailServices.cs",
+              "ToolTip": "D:\\Training\\Shopping Cart\\Shopping-Cart\\Ecommerce-api\\Repositories\\IRepositories\\IMailServices.cs",
+              "RelativeToolTip": "Repositories\\IRepositories\\IMailServices.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-11T12:18:03.392Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AccountRepo.cs",
-              "DocumentMoniker": "D:\\Training\\Shopping Cart\\Shopping-Cart\\Ecommerce-api\\Repositories\\AccountRepo.cs",
-              "RelativeDocumentMoniker": "Repositories\\AccountRepo.cs",
-              "ToolTip": "D:\\Training\\Shopping Cart\\Shopping-Cart\\Ecommerce-api\\Repositories\\AccountRepo.cs",
-              "RelativeToolTip": "Repositories\\AccountRepo.cs",
-              "ViewState": "AQIAALYAAAAAAAAAAAAowMgAAAA8AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-12-27T09:16:43.247Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "D:\\Training\\Shopping Cart\\Shopping-Cart\\Ecommerce-api\\Controllers\\AccountController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
-              "ToolTip": "D:\\Training\\Shopping Cart\\Shopping-Cart\\Ecommerce-api\\Controllers\\AccountController.cs",
-              "RelativeToolTip": "Controllers\\AccountController.cs",
-              "ViewState": "AQIAANgAAAAAAAAAAAAUwN8AAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-12-27T09:16:42.5Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ISharedRepo.cs",
-              "DocumentMoniker": "D:\\Training\\Shopping Cart\\Shopping-Cart\\Ecommerce-api\\Repositories\\IRepositories\\ISharedRepo.cs",
-              "RelativeDocumentMoniker": "Repositories\\IRepositories\\ISharedRepo.cs",
-              "ToolTip": "D:\\Training\\Shopping Cart\\Shopping-Cart\\Ecommerce-api\\Repositories\\IRepositories\\ISharedRepo.cs",
-              "RelativeToolTip": "Repositories\\IRepositories\\ISharedRepo.cs",
-              "ViewState": "AQIAAAQAAAAAAAAAAAAxwAoAAAA4AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-12T12:12:20.879Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "States.cs",
-              "DocumentMoniker": "D:\\Training\\Shopping Cart\\Shopping-Cart\\Ecommerce-api\\Models\\States.cs",
-              "RelativeDocumentMoniker": "Models\\States.cs",
-              "ToolTip": "D:\\Training\\Shopping Cart\\Shopping-Cart\\Ecommerce-api\\Models\\States.cs",
-              "RelativeToolTip": "Models\\States.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-12T12:13:22.794Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Districts.cs",
-              "DocumentMoniker": "D:\\Training\\Shopping Cart\\Shopping-Cart\\Ecommerce-api\\Models\\Districts.cs",
-              "RelativeDocumentMoniker": "Models\\Districts.cs",
-              "ToolTip": "D:\\Training\\Shopping Cart\\Shopping-Cart\\Ecommerce-api\\Models\\Districts.cs",
-              "RelativeToolTip": "Models\\Districts.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAqAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-12T12:14:56.531Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "databaseContext.cs",
-              "DocumentMoniker": "D:\\Training\\Shopping Cart\\Shopping-Cart\\Ecommerce-api\\Data\\databaseContext.cs",
-              "RelativeDocumentMoniker": "Data\\databaseContext.cs",
-              "ToolTip": "D:\\Training\\Shopping Cart\\Shopping-Cart\\Ecommerce-api\\Data\\databaseContext.cs",
-              "RelativeToolTip": "Data\\databaseContext.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAAQwBAAAAAxAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-12T12:17:29.43Z",
-              "EditorCaption": ""
+              "WhenOpened": "2023-12-27T10:00:17.842Z"
             },
             {
               "$type": "Document",
@@ -260,19 +272,6 @@
               "ViewState": "AQIAABMAAAAAAAAAAIA6wCsAAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-01-04T14:15:00.047Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Users.cs",
-              "DocumentMoniker": "D:\\Training\\Shopping Cart\\Shopping-Cart\\Ecommerce-api\\Models\\Users.cs",
-              "RelativeDocumentMoniker": "Models\\Users.cs",
-              "ToolTip": "D:\\Training\\Shopping Cart\\Shopping-Cart\\Ecommerce-api\\Models\\Users.cs",
-              "RelativeToolTip": "Models\\Users.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAUwBIAAAArAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-05T09:26:57.998Z",
               "EditorCaption": ""
             },
             {

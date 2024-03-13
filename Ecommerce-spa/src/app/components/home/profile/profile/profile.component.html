@@ -10,14 +10,17 @@
             <h5 class="card-title">
                 {{ this.user.firstName + " " + this.user.lastName }}
             </h5>
-            <label for="firstName">FirstName : </label>{{ " " + this.user.firstName }}<br />
-            <label for="lastName">LastName : </label>{{ " " + this.user.lastName}}<br />
-            <label for="email">Email : </label>{{ " " + this.user.email }}<br />
-            <label for="phonenumber">Phone Number : </label>{{ " " + this.user.phoneNumber }}<br />
-            <label for="address1">Address 1 : </label>{{ " " + this.user.address1 == null ? "" :this.user.address1}}<br />
-            <label for="addess2">Address 2 : </label>{{ " " + this.user.address2 == null ? "" :this.user.address2}}<br />
-            <label for="state">State : </label>{{ " " + this.user.state == null ? "" : this.user.state }}<br />
-            <label for="country">Country : </label>{{ " " + this.user.country == null ? "" : this.user.country}}<br /><br />
+            <label >FirstName : </label>{{ " " + this.user.firstName }}<br />
+            <label >LastName : </label>{{ " " + this.user.lastName}}<br />
+            <label >Email : </label>{{ " " + this.user.email }}<br />
+            <label >Phone Number : </label>{{ " " + this.user.phoneNumber }}<br />
+            <label >House/Appartment : </label>{{ " " + this.user.address1 == null ? "" :this.user.address1}}<br />
+            <label >Area/Locality : </label>{{ " " + this.user.address2 == null ? "" :this.user.address2}}<br />
+            <label >District : </label>{{ " " + this.user.district == null ? "" : this.user.district}}<br />
+            <label >State : </label>{{ " " + this.user.state == null ? "" : this.user.state }}<br />
+            <label >Country : </label>{{ " " + this.user.country == null ? "" : this.user.country}}<br />
+            <label >PinCode : </label>{{ " " + this.user.pincode == null ? "" : this.user.pincode}}<br /><br />
+            <br />
             <button (click)="DeleteAccount()" class="btn btn-primary btn-sm">
                 Delete Account
             </button>
